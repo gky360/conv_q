@@ -46,6 +46,9 @@ group :development, :test do
 end
 
 
+# heroku
+gem 'rails_12factor'
+
 # scraping
 gem 'mechanize'
 
