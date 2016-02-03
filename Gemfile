@@ -49,6 +49,9 @@ end
 # heroku
 gem 'rails_12factor'
 
+# Google Analytics
+gem 'google-analytics-rails'
+
 # scraping
 gem 'mechanize'
 

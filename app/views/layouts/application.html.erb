@@ -16,6 +16,8 @@
     <meta property="og:url" content="<%= request.original_url %>" />
     <meta property="og:site_name" content="ConvQ"/>
 
+    <%= analytics_init if Rails.env.production? %>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
