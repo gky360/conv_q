@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "ConvQ" %></title>
+    <% title = content_for?(:title) ? yield(:title) : "ConvQ - Conversation Questions" %>
+    <title><%= title %></title>
+    <meta content="ConvQ - Conversation Questions" name="title">
+    <meta content="Find, get, post conversation questions on ConvQ" name="description">
+
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="<%= title %>"/>
+    <meta property="og:description" content="Find, get, post conversation questions on ConvQ" />
+    <meta property="og:image" content="https://conv-q.herokuapp.com/images/icon.svg" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:site_name" content="ConvQ"/>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
