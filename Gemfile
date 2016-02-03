@@ -52,3 +52,6 @@ gem 'mechanize'
 gem 'execjs'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
+
+# paging
+gem 'kaminari'

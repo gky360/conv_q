@@ -3,7 +3,7 @@ class TopicsController < ApplicationController
   before_action :set_topic, only: [:show]
 
   def index
-    @topics = Topic.all
+    @topics = Topic.page(params[:page])
   end
 
   def show
