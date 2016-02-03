@@ -22,19 +22,22 @@
         <td><%= topic.source %></td>
         <td><%=l topic.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_topic_path(topic), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      topic_path(topic),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
+          <%= # link_to t('.edit', :default => t("helpers.links.edit")),
+              #         edit_topic_path(topic), :class => 'btn btn-default btn-xs'
+          %>
+          <%= # link_to t('.destroy', :default => t("helpers.links.destroy")),
+              #         topic_path(topic),
+              #         :method => :delete,
+              #         :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              #         :class => 'btn btn-xs btn-danger'
+          %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_topic_path,
-            :class => 'btn btn-primary' %>
+<%= # link_to t('.new', :default => t("helpers.links.new")),
+    #         new_topic_path,
+    #         :class => 'btn btn-primary'
+%>

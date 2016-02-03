@@ -49,5 +49,6 @@ end
 gem 'mechanize'
 
 # bootstrap
+gem 'execjs'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
