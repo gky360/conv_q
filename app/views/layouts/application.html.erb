@@ -9,12 +9,13 @@
     <meta content="ConvQ - Conversation Questions" name="title">
     <meta content="Find, get, post conversation questions on ConvQ" name="description">
 
-    <meta property="og:type" content="article"/>
+    <meta property="og:type" content="<%= current_page?(root_path) ? 'website' : 'article' %>"/>
     <meta property="og:title" content="<%= title %>"/>
     <meta property="og:description" content="Find, get, post conversation questions on ConvQ" />
     <meta property="og:image" content="https://conv-q.herokuapp.com/images/icon.png" />
     <meta property="og:url" content="<%= request.original_url %>" />
     <meta property="og:site_name" content="ConvQ"/>
+    <meta property="fb:app_id" content="1691593127785449" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@conv_q" />
 
