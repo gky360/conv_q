@@ -7,4 +7,7 @@ class Topic < ActiveRecord::Base
 
   TITLE_SPLITTTER = " ; "
 
+  scope :rand, -> { return order("RANDOM()") }   if Rails.env === "production"
+  scope :rand, -> { return order("RAND()") } unless Rails.env === "production"
+
 end

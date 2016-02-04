@@ -1,7 +1,7 @@
 class ConvQController < ApplicationController
 
   def index
-    @topic = Topic.order("RAND()").first
+    @topic = Topic.rand.first
   end
 
 end
