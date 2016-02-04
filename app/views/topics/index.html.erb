@@ -19,10 +19,10 @@
   <tbody>
     <% @topics.each do |topic| %>
       <tr>
-        <td><%= link_to topic.id, topic_path(topic) %></td>
-        <td><%= topic.title %></td>
+        <td><%= link_to topic.id, topic %></td>
+        <td><%= link_to topic.title, topic %></td>
         <td><%= topic.tags %></td>
-        <td><%= link_to topic.source.match(/http:\/\/([^\/]*)/)[1], topic.source %></td>
+        <td><%= link_to_source(topic) %></td>
         <td><%=l topic.created_at %></td>
         <td>
           <%= # link_to t('.edit', :default => t("helpers.links.edit")),

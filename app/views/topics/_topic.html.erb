@@ -1,0 +1,21 @@
+<dl class="dl-horizontal">
+  <dt><strong><%= Topic.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= topic.title %></dd>
+  <dt><strong><%= Topic.human_attribute_name(:tags) %>:</strong></dt>
+  <dd><%= topic.tags %></dd>
+  <dt><strong><%= Topic.human_attribute_name(:source) %>:</strong></dt>
+  <dd><%= link_to_source(topic) %></dd>
+</dl>
+
+<div class="row">
+  <div class="raito-fix col-sm-4 col-sm-offset-4">
+    <div id="cq-timer">
+      <canvas id="cq-timer-canvas"></canvas>
+      <div id="cq-timer-seconds-wrap">
+        <div id="cq-timer-seconds">
+          <span class="glyphicon glyphicon-play"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

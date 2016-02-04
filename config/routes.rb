@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'topics#index'
+  root to: 'conv_q#index'
 
   resources :topics, only: [:index, :show]
 

@@ -58,7 +58,10 @@ gem 'mechanize'
 # bootstrap
 gem 'execjs'
 gem 'less-rails'
-gem 'twitter-bootstrap-rails'
+gem "twitter-bootstrap-rails"
 
 # paging
 gem 'kaminari'
+
+# timer
+gem 'chart-js-rails'

@@ -1,16 +1,8 @@
-<%- model_class = Topic -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <h1><%=t '.title', :default => Topic.model_name.human.titleize %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
-  <dd><%= @topic.title %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:tags) %>:</strong></dt>
-  <dd><%= @topic.tags %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:source) %>:</strong></dt>
-  <dd><%= @topic.source %></dd>
-</dl>
+<%= render @topic %>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               topics_path, :class => 'btn btn-default'  %>
