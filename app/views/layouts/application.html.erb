@@ -61,12 +61,11 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">ConvQ</a>
+        <a class="navbar-brand" href="/"><img src="/images/icon.svg" alt="ConvQ"></a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+            <li><%= link_to "ConvQ", root_path %></li>
+            <li><%= link_to "Topics", topics_path %></li>
           </ul>
         </div>
       </div>
@@ -74,28 +73,26 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-lg-9">
+        <div class="col-lg-10 col-lg-offset-1">
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
-        <div class="col-lg-3">
-          <div class="well sidebar-nav">
-            <h3>Sidebar</h3>
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
       </div><!--/row-->
 
-      <footer>
-        <p>&copy; ConvQ 2016</p>
-      </footer>
-
     </div> <!-- /container -->
+
+    <footer class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-text footer-text text-center">
+          <small>&copy; ConvQ 2016</small>
+        </div>
+      </div>
+
+      <% if @debug %>
+      <%= debug @debug %>
+      <% end %>
+      <%= yield :debug %>
+    </footer>
 
   </body>
 </html>
