@@ -20,6 +20,13 @@
  * common
  * ************************************************** */
 
+.cq-green {
+  color: #A1CC3A;
+}
+.cq-brown {
+  color: #646262;
+}
+
 .raito-fix {
   position: relative;
 }
@@ -43,6 +50,29 @@
 .navbar-brand > img {
   margin: -0.5em;
   height: 2em;
+}
+
+.navbar .conv_q {
+  height: 1em;
+}
+
+.jumbotron .logo > img {
+  width: 100%;
+  padding: 10px;
+}
+
+/* **************************************************
+ * topic
+ * ************************************************** */
+
+.topic .title {
+  font-size: 24px;
+}
+.topic .tags {
+  font-size: 16px;
+}
+.topic .tags > .label {
+  margin-right: 5px;
 }
 
 /* **************************************************

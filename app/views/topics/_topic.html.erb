@@ -1,8 +1,8 @@
-<dl class="dl-horizontal">
+<dl class="topic dl-horizontal">
   <dt><strong><%= Topic.human_attribute_name(:title) %>:</strong></dt>
-  <dd><%= topic.title %></dd>
+  <dd><div class="title"><%= topic.title %></div></dd>
   <dt><strong><%= Topic.human_attribute_name(:tags) %>:</strong></dt>
-  <dd><%= topic.tags %></dd>
+  <dd><div class="tags"><%= tags_to_label(topic.tags) %></div></dd>
   <dt><strong><%= Topic.human_attribute_name(:source) %>:</strong></dt>
   <dd><%= link_to_source(topic) %></dd>
 </dl>
