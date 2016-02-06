@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
     presence: true
   validates :account,
     presence: true,
-    uniqueness: true
+    uniqueness: true,
+    format: { with: /\A[a-z0-9_]{1,24}\z/ }
 
 end
