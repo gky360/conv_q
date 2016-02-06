@@ -1,5 +1,8 @@
 class Topic < ActiveRecord::Base
 
+  has_many :histories
+  has_many :users, through: :histories
+
   validates :title,
     presence: true
 
