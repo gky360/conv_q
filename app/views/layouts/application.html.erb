@@ -66,6 +66,17 @@
           <ul class="nav navbar-nav">
             <li><a href="/"><img src="/images/conv_q.svg" alt="ConvQ" class="conv_q"></a></li>
             <li><%= link_to "Topics", topics_path %></li>
+            <li>
+            <% if user_signed_in? %>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+              <span class="glyphicon glyphicon-user"></span> Sign Out
+              <% end %>
+            <% else %>
+              <%= link_to new_user_session_path do %>
+              <span class="glyphicon glyphicon-user"></span> Sign In
+              <% end %>
+            <% end %>
+            </li>
           </ul>
         </div>
       </div>

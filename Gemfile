@@ -65,3 +65,9 @@ gem 'kaminari'
 
 # timer
 gem 'chart-js-rails'
+
+# user
+gem 'devise'
+gem 'devise-bootstrap-views'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
