@@ -19,3 +19,16 @@
     </div>
   </div>
 </div>
+
+<%= form_tag topic_with_done_path(next_topic), method: :post do %>
+  <%= hidden_field_tag "done_topic_id", topic.id %>
+  <div class="text-center">
+    <%= link_to "Topics list", topics_path, class: "btn btn-primary" %>
+    <%= link_to topic_path(next_topic), class: "btn btn-default" do %>
+      Skip <span class="glyphicon glyphicon-chevron-right"></span>
+    <% end %>
+    <%= button_tag type: "submit", class: "btn btn-success" do %>
+      Done <span class="glyphicon glyphicon-ok"></span>
+    <% end %>
+  </div>
+<% end %>

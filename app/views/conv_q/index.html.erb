@@ -26,10 +26,4 @@
   <h2>Random Topic</h2>
 </div>
 
-
-<%= render @topic %>
-
-<div class="text-center">
-  <%= link_to "See more topcis", topics_path, class: "btn btn-default" %>
-  <a href="/" class="btn btn-success">Next <span class="glyphicon glyphicon-chevron-right"></span></a>
-</div>
+<%= render partial: "topics/topic", locals: { topic: @topic, next_topic: @next_topic } %>
