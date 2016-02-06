@@ -72,8 +72,10 @@
 .topic .tags {
   font-size: 16px;
 }
-.topic .tags > .label {
+.topic-tag.label {
+  display: inline-block;
   margin-right: 5px;
+  white-space: normal;
 }
 
 /* **************************************************

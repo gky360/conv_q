@@ -5,37 +5,27 @@
 
 <%= page_entries_info @topics %>
 
-<table class="table table-striped">
+<table class="topic-table table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:tags) %></th>
-      <th><%= model_class.human_attribute_name(:source) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th class="row">
+        <div class="col-sm-7 col-xs-12">Title</div>
+        <div class="col-sm-2 col-xs-12">Tags</div>
+        <div class="col-sm-1 col-xs-12">Source</div>
+        <div class="col-sm-2 col-xs-12">Created at</div>
+      </th>
     </tr>
   </thead>
   <tbody>
     <% @topics.each do |topic| %>
-      <tr>
-        <td><%= link_to topic.id, topic %></td>
-        <td><%= link_to topic.title, topic %></td>
-        <td><%= topic.tags %></td>
-        <td><%= link_to_source(topic) %></td>
-        <td><%=l topic.created_at %></td>
-        <td>
-          <%= # link_to t('.edit', :default => t("helpers.links.edit")),
-              #         edit_topic_path(topic), :class => 'btn btn-default btn-xs'
-          %>
-          <%= # link_to t('.destroy', :default => t("helpers.links.destroy")),
-              #         topic_path(topic),
-              #         :method => :delete,
-              #         :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              #         :class => 'btn btn-xs btn-danger'
-          %>
-        </td>
-      </tr>
+    <tr>
+      <td class="row">
+        <div class="title col-sm-7 col-xs-12"><p><%= link_to topic.title, topic %></p></div>
+        <div class="col-sm-2 col-xs-12"><%= tags_to_label(topic.tags) %></div>
+        <div class="col-sm-1 col-xs-12"><%= link_to_source(topic) %></div>
+        <div class="col-sm-2 col-xs-12"><%= topic.created_at %></div>
+      </td>
+    </tr>
     <% end %>
   </tbody>
 </table>

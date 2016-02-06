@@ -9,6 +9,37 @@
   <dd>@<%= @user.account %></dd>
 </dl>
 
+<h2>Done Topics</h2>
+
+<table class="topic-table table table-striped">
+  <thead>
+    <tr>
+      <th class="row">
+        <div class="col-sm-7 col-xs-12">Title</div>
+        <div class="col-sm-2 col-xs-4">Tags</div>
+        <div class="col-sm-1 col-xs-3">Source</div>
+        <div class="col-sm-2 col-xs-5">Done at</div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @histories.each do |history| %>
+    <% topic = history.topic %>
+    <tr>
+      <td class="row">
+        <div class="title col-sm-7 col-xs-12"><p><%= link_to topic.title, topic %></p></div>
+        <div class="col-sm-2 col-xs-4"><%= tags_to_label(topic.tags) %></div>
+        <div class="col-sm-1 col-xs-3"><%= link_to_source(topic) %></div>
+        <div class="col-sm-2 col-xs-5"><%= history.created_at %></div>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= @histories.length %>
+
 <% if user_signed_in? && @user.id === current_user.id %>
 <div>
   <p>
