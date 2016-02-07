@@ -15,7 +15,7 @@ class Topic < ActiveRecord::Base
 
   def self.rand_for_user(user)
     if user.nil?
-      return Topic.includes(:histories).rand.first
+      return Topic.includes(:histories).rand
     end
     histories = user.histories
     average_times = histories.average(:times)
