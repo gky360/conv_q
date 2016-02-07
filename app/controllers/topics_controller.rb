@@ -12,7 +12,9 @@ class TopicsController < ApplicationController
   end
 
   def done_and_show
-    History.create({ topic_id: params[:done_topic_id], user_id: current_user.id })
+    history = History.where(topic_id: params[:done_topic_id], user_id: current_user.id).first_or_initialize
+    history.times = history.times + 1
+    history.save
     redirect_to @topic
   end
 
@@ -24,7 +26,7 @@ class TopicsController < ApplicationController
   end
 
   def set_next_topic
-    @next_topic = Topic.rand.first
+    @next_topic = Topic.rand_for_user(current_user).first
   end
 
 end

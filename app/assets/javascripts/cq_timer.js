@@ -37,6 +37,10 @@ var CqTimer = function() {
     animateScale : false,
   }
 
+  var done_button = $("#done-button");
+  if (done_button != null) {
+    done_button.prop("disabled", true);
+  }
   this.seconds = $("#cq-timer-seconds");
   this.chart = new Chart($("#cq-timer-canvas").get(0).getContext("2d")).Doughnut(this.data, this.options);
 };
@@ -85,6 +89,10 @@ CqTimer.prototype.decrease = function(_this) {
       _this.chart.segments[2].value -= 1.0 / _this.FREQ;
     } else {
       _this.reset_timer();
+      var done_button = $("#done-button");
+      if (done_button != null) {
+        done_button.prop("disabled", false);
+      }
     }
     _this.chart.update();
   };

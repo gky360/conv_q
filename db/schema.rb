@@ -16,8 +16,9 @@ ActiveRecord::Schema.define(version: 20160206163641) do
   create_table "histories", force: :cascade do |t|
     t.integer  "topic_id",   limit: 4
     t.integer  "user_id",    limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.integer  "times",      limit: 4, default: 0, null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   create_table "topics", force: :cascade do |t|
