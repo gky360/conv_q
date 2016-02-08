@@ -9,15 +9,11 @@ var CqTimer = function() {
     color: "#F5F5F5",
     label: ""
   },{
-    value: 1,
-    // REMOVE
-    // value: 15,
+    value: 15,
     color: "#646262",
     label: "Think"
   },{
-    value: 1,
-    // REMOVE
-    // value: 45,
+    value: 45,
     color: "#A1CC3A",
     label: "Speak"
   }];
