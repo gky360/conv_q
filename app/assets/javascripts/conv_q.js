@@ -8,4 +8,11 @@ $(document).on("ready page:load", function() {
     });
   }
 
+  var set_time_zone_offset = function() {
+    var current_time = new Date();
+    Cookies.set('time_zone', current_time.getTimezoneOffset());
+  }
+
+  set_time_zone_offset();
+
 });

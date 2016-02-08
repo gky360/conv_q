@@ -22,29 +22,29 @@
 <h2>Done Topics</h2>
 
 <table class="topic-table table table-striped">
-  <thead>
+  <thead class="row">
     <tr>
-      <th class="row">
+      <th>
         <div class="col-sm-5 col-xs-12">Title</div>
         <div class="col-sm-2 col-xs-12">Tags</div>
-        <div class="col-sm-1 col-xs-12">Source</div>
-        <div class="col-sm-1 col-xs-12">Times</div>
+        <div class="col-sm-2 col-xs-12">Ratings</div>
         <div class="col-sm-1 col-xs-12">Your Rating</div>
-        <div class="col-sm-2 col-xs-12">Last done at</div>
+        <div class="col-sm-1 col-xs-12">Times</div>
+        <div class="col-sm-1 col-xs-12">Last done on</div>
       </th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="row">
     <% @histories.each do |history| %>
     <% topic = history.topic %>
     <tr>
-      <td class="row">
+      <td>
         <div class="title col-sm-5 col-xs-12"><p><%= link_to topic.title, topic %></p></div>
         <div class="col-sm-2 col-xs-12"><%= tags_to_label(topic) %></div>
-        <div class="col-sm-1 col-xs-12"><%= link_to_source(topic) %></div>
-        <div class="col-sm-1 col-xs-12"><%= history.times %> <%= history.times > 1 ? "times" : "time" %></div>
+        <div class="col-sm-2 col-xs-12"><%= render partial: "topics/ratings", locals: { ratings: topic.ratings, verbose: true } %></div>
         <div class="col-sm-1 col-xs-12"><%= rating_to_iocn(history) %></div>
-        <div class="col-sm-2 col-xs-12"><%= history.updated_at %></div>
+        <div class="col-sm-1 col-xs-12"><%= history.times %> <%= history.times > 1 ? "times" : "time" %></div>
+        <div class="col-sm-1 col-xs-12"><%= history.updated_at.in_time_zone(user_time_zone).strftime("%b %d %Y") %></div>
       </td>
     </tr>
     <% end %>

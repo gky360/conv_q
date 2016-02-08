@@ -5,7 +5,7 @@ class TopicsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @topics = Topic.page(params[:page])
+    @topics = Topic.includes(:histories).page(params[:page])
   end
 
   def show
@@ -25,7 +25,7 @@ class TopicsController < ApplicationController
   private
 
   def set_topic
-    @topic = Topic.find(params[:id])
+    @topic = Topic.includes(:histories).find(params[:id])
   end
 
   def set_next_topic

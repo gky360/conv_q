@@ -77,6 +77,17 @@
   margin-right: 5px;
   white-space: normal;
 }
+.topic-table > thead > tr > th,
+.topic-table > tbody > tr > th,
+.topic-table > thead > tr > td,
+.topic-table > tbody > tr > td {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.ratings {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 
 /* **************************************************
  * timer
