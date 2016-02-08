@@ -77,12 +77,23 @@
   margin-right: 5px;
   white-space: normal;
 }
+.topic-table > thead > tr > th,
+.topic-table > tbody > tr > th,
+.topic-table > thead > tr > td,
+.topic-table > tbody > tr > td {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.ratings {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 
 /* **************************************************
  * timer
  * ************************************************** */
 
-#cq-timer {
+#cq-timer-body {
   margin: 20px;
 }
 #cq-timer-canvas, #cq-timer-seconds-wrap {
@@ -109,6 +120,13 @@
 #cq-timer-seconds > span {
   margin: -5px 0 0 5px;
 }
+#cq-timer-done-like,
+#cq-timer-done-dislike,
+#cq-timer-done-submit {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 
 /* **************************************************
  * footer

@@ -6,4 +6,6 @@ class History < ActiveRecord::Base
   validates :topic_id, null: false
   validates :user_id,  null: false
 
+  enum rating: { like: 1, dislike: -1 }
+
 end

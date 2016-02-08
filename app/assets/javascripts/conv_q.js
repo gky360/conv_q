@@ -3,9 +3,16 @@ $(document).on("ready page:load", function() {
   var d_cq_timer = $("#cq-timer");
   if (d_cq_timer[0] != null) {
     var cq_timer = new CqTimer();
-    d_cq_timer.on("click", function() {
+    $("#cq-timer-body").on("click", function() {
       cq_timer.toggle_timer();
     });
   }
+
+  var set_time_zone_offset = function() {
+    var current_time = new Date();
+    Cookies.set('time_zone', current_time.getTimezoneOffset());
+  }
+
+  set_time_zone_offset();
 
 });

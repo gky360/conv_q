@@ -5,7 +5,7 @@ class TopicsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @topics = Topic.page(params[:page])
+    @topics = Topic.includes(:histories).page(params[:page])
   end
 
   def show
@@ -14,6 +14,9 @@ class TopicsController < ApplicationController
   def done_and_show
     history = History.where(topic_id: params[:done_topic_id], user_id: current_user.id).first_or_initialize
     history.times = history.times + 1
+    if params[:rating]
+      history.rating = History.ratings[params[:rating].to_sym]
+    end
     history.save
     redirect_to @topic
   end
@@ -22,7 +25,7 @@ class TopicsController < ApplicationController
   private
 
   def set_topic
-    @topic = Topic.find(params[:id])
+    @topic = Topic.includes(:histories).find(params[:id])
   end
 
   def set_next_topic
