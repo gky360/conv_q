@@ -14,6 +14,9 @@ class TopicsController < ApplicationController
   def done_and_show
     history = History.where(topic_id: params[:done_topic_id], user_id: current_user.id).first_or_initialize
     history.times = history.times + 1
+    if params[:rating]
+      history.rating = History.ratings[params[:rating].to_sym]
+    end
     history.save
     redirect_to @topic
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160206163641) do
+ActiveRecord::Schema.define(version: 20160208121544) do
 
   create_table "histories", force: :cascade do |t|
     t.integer  "topic_id",   limit: 4
@@ -19,7 +19,10 @@ ActiveRecord::Schema.define(version: 20160206163641) do
     t.integer  "times",      limit: 4, default: 0, null: false
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+    t.integer  "rating",     limit: 4, default: 0, null: false
   end
+
+  add_index "histories", ["topic_id", "user_id"], name: "index_histories_on_topic_id_and_user_id", unique: true, using: :btree
 
   create_table "topics", force: :cascade do |t|
     t.text     "title",      limit: 65535, null: false

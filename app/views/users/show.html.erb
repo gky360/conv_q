@@ -25,10 +25,11 @@
   <thead>
     <tr>
       <th class="row">
-        <div class="col-sm-6 col-xs-12">Title</div>
+        <div class="col-sm-5 col-xs-12">Title</div>
         <div class="col-sm-2 col-xs-12">Tags</div>
         <div class="col-sm-1 col-xs-12">Source</div>
         <div class="col-sm-1 col-xs-12">Times</div>
+        <div class="col-sm-1 col-xs-12">Your Rating</div>
         <div class="col-sm-2 col-xs-12">Last done at</div>
       </th>
     </tr>
@@ -38,10 +39,11 @@
     <% topic = history.topic %>
     <tr>
       <td class="row">
-        <div class="title col-sm-6 col-xs-12"><p><%= link_to topic.title, topic %></p></div>
-        <div class="col-sm-2 col-xs-12"><%= tags_to_label(topic.tags) %></div>
+        <div class="title col-sm-5 col-xs-12"><p><%= link_to topic.title, topic %></p></div>
+        <div class="col-sm-2 col-xs-12"><%= tags_to_label(topic) %></div>
         <div class="col-sm-1 col-xs-12"><%= link_to_source(topic) %></div>
         <div class="col-sm-1 col-xs-12"><%= history.times %> <%= history.times > 1 ? "times" : "time" %></div>
+        <div class="col-sm-1 col-xs-12"><%= rating_to_iocn(history) %></div>
         <div class="col-sm-2 col-xs-12"><%= history.updated_at %></div>
       </td>
     </tr>

@@ -5,6 +5,8 @@ class Topic < ActiveRecord::Base
 
   validates :title,
     presence: true
+  validates :topic_id,
+    uniqueness: { scope: [:user_id] }
 
   paginates_per 20
 
@@ -15,7 +17,7 @@ class Topic < ActiveRecord::Base
 
   def self.rand_for_user(user)
     if user.nil?
-      return Topic.includes(:histories).rand
+      return Topic.rand
     end
     histories = user.histories
     average_times = histories.average(:times)
