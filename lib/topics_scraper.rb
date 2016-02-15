@@ -6,7 +6,7 @@ class TopicsScraper
 
   # メイン関数
   def self.scrape
-    @tags = []
+    @tag_strs = []
 
     @agent = Mechanize.new
     page = @agent.get("#{TEFLPEDIA}/Category:Conversation_questions")
@@ -21,9 +21,9 @@ class TopicsScraper
   def self.scrape_category(url)
     page = @agent.get("#{TEFLPEDIA}#{url}")
 
-    @tags.push page.title.split(' ')[0..-5].join(' ')
+    @tag_strs.push page.title.split(' ')[0..-5].join(' ')
     puts
-    p @tags
+    p @tag_strs
 
     h_stack = [1]
     page.at('#mw-content-text').children.each do |child|
@@ -36,13 +36,13 @@ class TopicsScraper
         new_h_num = child.name[1].to_i
         while h_stack[-1] >= new_h_num
           h_stack.pop
-          @tags.pop
+          @tag_strs.pop
         end
         h_stack.push(new_h_num)
-        @tags.push(tag_title)
+        @tag_strs.push(tag_title)
       elsif child.name === "ul"
         puts
-        p @tags
+        p @tag_strs
         child.children.each do |li|
           next if li.name != "li"
           @topic_title = []
@@ -54,10 +54,10 @@ class TopicsScraper
 
     while h_stack.length > 1
       h_stack.pop
-      @tags.pop
+      @tag_strs.pop
     end
 
-    @tags.pop
+    @tag_strs.pop
   end
 
   def self.scrape_li(li)
@@ -80,10 +80,10 @@ class TopicsScraper
       # Topic 登録
       topic = Topic.new
       topic.title = @topic_title.join(Topic::TITLE_SPLITTTER)
-      topic.tags = @tags.uniq.join(",")
       topic.source = @agent.current_page.uri.to_s
       puts topic.title
       topic.save
+      topic.tag_ids = @tag_strs.uniq.map { |tag_str| Tag.where(name: tag_str).first_or_create.id }
     end
     while @topic_title.length > topic_title_length
       @topic_title.pop

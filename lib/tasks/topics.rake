@@ -11,6 +11,10 @@ namespace :topics do
   task :reset => :environment do
     Topic.delete_all
     Topic.connection.execute("TRUNCATE TABLE `topics`;")
+    TagTopic.delete_all
+    TagTopic.connection.execute("TRUNCATE TABLE `tag_topics`")
+    Tag.delete_all
+    Tag.connection.execute("TRUNCATE TABLE `tags`")
   end
 
 end

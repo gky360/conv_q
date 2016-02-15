@@ -5,6 +5,8 @@ class History < ActiveRecord::Base
 
   validates :topic_id, null: false
   validates :user_id,  null: false
+  validates :topic_id,
+    uniqueness: { scope: [:user_id] }
 
   enum rating: { like: 1, dislike: -1 }
 
