@@ -17,4 +17,5 @@
 //= require Chart
 //= require turbolinks
 //= require angular/angular
+//= require angular-resource/angular-resource
 //= require_tree .

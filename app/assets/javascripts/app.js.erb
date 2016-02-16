@@ -1,0 +1,14 @@
+"use strict";
+
+var API_ROOT = '<%= Rails.env === "production" ? "https://conv-q.herokuapp.com" : "http://localhost:3000" %>/api/v1';
+
+var app = angular.module("app", ["ngResource"]);
+
+// CSRFのトークンを設定するようにする
+app.config(["$httpProvider", function($httpProvider) {
+  var authToken = $("meta[name=\"csrf-token\"]").attr("content");
+  $httpProvider.defaults.headers.common["X-CSRF-TOKEN"] = authToken;
+}]);
+
+app.controller("convQCtrl", [function ConvQCtrl() {
+}]);
