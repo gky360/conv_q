@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
+<html lang="en">
   <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -87,8 +87,8 @@
       </div>
     </div>
 
-    <div class="container" ng-controller="convQCtrl">
-      <div class="row">
+    <div class="container" ng-app="app">
+      <div class="row" ng-controller="convQCtrl">
         <div class="col-lg-10 col-lg-offset-1">
           <%= bootstrap_flash %>
           <%= yield %>

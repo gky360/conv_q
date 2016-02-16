@@ -5,10 +5,8 @@ class TopicsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @q = Topic.new(q_params)
-    @topics = Topic.includes(:tags, :histories)
-      .where("`title` LIKE ?", "%#{@q.title}%")
-      .page(params[:page])
+    @q = q_params
+    @topics = Topic.includes(:tags, :histories).search(@q).page(params[:page])
   end
 
   def show
@@ -33,10 +31,6 @@ class TopicsController < ApplicationController
 
   def set_next_topic
     @next_topic = Topic.rand_for_user(current_user).first
-  end
-
-  def q_params
-    params.permit(:title, :tag_ids)
   end
 
 end

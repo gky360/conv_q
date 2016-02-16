@@ -21,6 +21,10 @@
 
 <h2>Done Topics</h2>
 
+<%= render partial: "topics/search", locals: { q: @q, panel_title: "Search Done Topic" } %>
+
+<%= page_entries_info @histories %>
+
 <table class="topic-table table table-striped">
   <thead class="row">
     <tr>
@@ -50,3 +54,6 @@
     <% end %>
   </tbody>
 </table>
+
+<%= paginate @histories %>
+

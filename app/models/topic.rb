@@ -40,4 +40,17 @@ class Topic < ActiveRecord::Base
     return Topic.includes(:tags, :histories).where.not(id: topic_ids).rand
   end
 
+  def self.search(q)
+    topics = Topic.where("`title` LIKE ?", "%#{q[:title]}%")
+    if q[:tag_names]
+      q[:tag_names].split(",").each do |tag_name|
+        tag = Tag.find_by(name: tag_name)
+        next if tag.nil?
+        topics = topics.where(id: tag.topic_ids)
+      end
+    end
+
+    return topics
+  end
+
 end

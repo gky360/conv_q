@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update).push(:name)
   end
 
+  def q_params
+    params.permit(:title, :tag_names)
+  end
+
 end

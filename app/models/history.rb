@@ -10,4 +10,6 @@ class History < ActiveRecord::Base
 
   enum rating: { like: 1, dislike: -1 }
 
+  paginates_per 20
+
 end

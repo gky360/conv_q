@@ -1,12 +1,12 @@
 <% verbose ||= false %>
 <div class="ratings progress">
   <div class="progress-bar progress-bar-success" style="width: <%= ratings[:like] * 100.0 / (ratings[:total].zero? ? 1 : ratings[:total]) %>%">
-    <% if verbose %>
+    <% if verbose && ratings[:like] > 0 %>
     <span class="glyphicon glyphicon-thumbs-up"></span> <%= ratings[:like] %>
     <% end %>
   </div>
   <div class="progress-bar progress-bar-danger" style="width: <%= ratings[:dislike] * 100.0 / (ratings[:total].zero? ? 1 : ratings[:total]) %>%">
-    <% if verbose %>
+    <% if verbose && ratings[:dislike] > 0 %>
     <span class="glyphicon glyphicon-thumbs-down"></span> <%= ratings[:dislike] %>
     <% end %>
   </div>

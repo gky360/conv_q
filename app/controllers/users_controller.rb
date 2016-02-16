@@ -3,7 +3,11 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show]
 
   def show
-    @histories = History.includes(:topic).where(user_id: @user)
+    @q = q_params
+    @histories = History.includes(:topic)
+      .joins(:topic).merge(Topic.search(@q))
+      .where(user_id: @user)
+      .order(updated_at: :desc).page(params[:page])
   end
 
   private
