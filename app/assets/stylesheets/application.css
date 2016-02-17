@@ -12,6 +12,8 @@
  *
  *= require bootstrap_and_overrides
  *= require devise_bootstrap_views
+ *= require jquery.tagit
+ *= require tagit.ui-zendesk
  *= require_tree .
  *= require_self
  */

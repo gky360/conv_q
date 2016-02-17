@@ -3,6 +3,8 @@
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 
+<%= render partial: "topics/search", locals: { q: @q } %>
+
 <%= page_entries_info @topics %>
 
 <table class="topic-table table table-striped">

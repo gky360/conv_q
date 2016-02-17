@@ -1,3 +1,5 @@
+"use strict";
+
 $(document).on("ready page:load", function() {
 
   var d_cq_timer = $("#cq-timer");

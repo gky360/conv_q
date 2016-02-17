@@ -12,4 +12,11 @@ Rails.application.routes.draw do
 
   get '/users/:account' => 'users#show', as: 'user'
 
+  # API
+  namespace :api, { format: 'json' } do
+    namespace :v1 do
+      resources :tags, only: [:index]
+    end
+  end
+
 end
