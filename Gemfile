@@ -5,8 +5,7 @@ ruby '2.1.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use mysql as the database for Active Record
-gem 'mysql2', '~> 0.3.20', group: [:development, :test]
-gem 'pg', group: :production
+gem 'mysql2', '~> 0.3.20'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

@@ -15,9 +15,9 @@ test:
   database: conv_q_test
 
 production:
-  adapter: postgresql
+  adapter: mysql2
   encoding: utf8
-  database: d1to4ej4e7ouju
-  port: 5432
-  username: gmtbszglppwuuy
+  pool: 5
+  username: bff253741d6d67
   password: <%= ENV['CONV_Q_DATABASE_PASSWORD'] %>
+  database: heroku_bde28d9cdbaca51
