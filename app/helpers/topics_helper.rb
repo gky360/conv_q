@@ -5,7 +5,9 @@ module TopicsHelper
     topic.tags.each do |tag|
       labels += content_tag :span, tag.name, class: "label label-success topic-tag"
     end
-    labels += link_to(topic.source.match(/(http|https):\/\/(.*?)\//)[2], topic.source, class: "label label-default topic-tag")
+    if topic.source_url.present?
+      labels += link_to(topic.source_url.match(/(http|https):\/\/(.*?)\//)[2], topic.source_url, class: "label label-default topic-tag")
+    end
     return raw labels
   end
 

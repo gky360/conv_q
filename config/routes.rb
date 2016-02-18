@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'conv_q#index'
 
-  resources :topics, only: [:index, :show]
+  resources :topics, except: [:destroy]
   post '/topics/:id' => 'topics#done_and_show', as: 'topic_with_done'
 
   resources :histories, only: [:create]
