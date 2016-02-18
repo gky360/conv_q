@@ -17,8 +17,12 @@
           <%= text_field_tag :tag_names, q[:tag_names], class: "form-control", data: { role: "tagsinput" } %>
         </div>
       </div>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-      <%= link_to "Clear", request.path_info, class: "btn btn-default" %>
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+          <%= link_to "Clear", request.path_info, class: "btn btn-default" %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
