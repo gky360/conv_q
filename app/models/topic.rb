@@ -1,12 +1,15 @@
 class Topic < ActiveRecord::Base
 
   has_many :histories
-  has_many :users, through: :histories
   has_many :tag_topics
   has_many :tags, through: :tag_topics
+  belongs_to :user
 
   validates :title,
     presence: true
+  validates :source_url,
+    allow_blank: true,
+    format:{ with: /\A#{URI::regexp(%w(http https))}\z/ }
 
   paginates_per 20
 
@@ -54,6 +57,11 @@ class Topic < ActiveRecord::Base
     end
 
     return topics
+  end
+
+  def by_user?(user)
+    return false if user.nil?
+    return user_id === user.id
   end
 
 end

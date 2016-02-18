@@ -80,10 +80,11 @@ class TopicsScraper
       # Topic 登録
       topic = Topic.new
       topic.title = @topic_title.join(Topic::TITLE_SPLITTTER)
-      topic.source = @agent.current_page.uri.to_s
+      topic.source_url = @agent.current_page.uri.to_s
       puts topic.title
       topic.save
-      topic.tag_ids = @tag_strs.uniq.map { |tag_str| Tag.where(name: tag_str).first_or_create.id }
+      @tag_strs.map! { |tag_str| tag_str.gsub(/[,]/, "") }
+      topic.tags = Tag.all_with_names(@tag_strs)
     end
     while @topic_title.length > topic_title_length
       @topic_title.pop

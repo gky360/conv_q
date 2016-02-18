@@ -7,9 +7,9 @@
 <p>
   <%= link_to t('.back', :default => t("helpers.links.back")),
                 topics_path, :class => 'btn btn-default'  %>
-  <%= # link_to t('.edit', :default => t("helpers.links.edit")),
-      #           edit_topic_path(@topic), :class => 'btn btn-default'
-  %>
+  <% if @topic.by_user?(current_user) %>
+  <%= link_to "Edit Topic", edit_topic_path(@topic), :class => 'btn btn-primary' %>
+  <% end %>
   <%= # link_to t('.destroy', :default => t("helpers.links.destroy")),
       #           topic_path(@topic),
       #           :method => 'delete',

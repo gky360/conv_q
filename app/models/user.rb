@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :histories
-  has_many :topics, through: :histories
+  has_many :topics
 
   validates :name,
     presence: true

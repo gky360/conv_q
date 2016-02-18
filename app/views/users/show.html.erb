@@ -23,7 +23,9 @@
 
 <%= render partial: "topics/search", locals: { q: @q, panel_title: "Search Done Topic" } %>
 
-<%= page_entries_info @histories %>
+<p>
+  <%= page_entries_info @histories %>
+</p>
 
 <table class="topic-table table table-striped">
   <thead class="row">
