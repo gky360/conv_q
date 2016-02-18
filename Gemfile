@@ -45,6 +45,14 @@ group :development, :test do
 end
 
 
+# pry
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-byebug'
+  gem 'pry-stack_explorer'
+end
+
 # heroku
 gem 'rails_12factor'
 
