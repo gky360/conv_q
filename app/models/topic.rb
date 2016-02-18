@@ -40,7 +40,11 @@ class Topic < ActiveRecord::Base
   end
 
   def self.search(q)
-    topics = Topic.where("`title` LIKE ?", "%#{q[:title]}%")
+    topics = Topic.all
+    q[:title] ||= ""
+    q[:title].split(/[ ,]+/).each do |title|
+      topics = topics.where("`title` LIKE ?", "%#{title}%")
+    end
     if q[:tag_names]
       q[:tag_names].split(",").each do |tag_name|
         tag = Tag.find_by(name: tag_name)
