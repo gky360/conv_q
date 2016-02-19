@@ -2,7 +2,7 @@
   <h1><%=t '.title', :default => Topic.model_name.human.titleize %></h1>
 </div>
 
-<%= render partial: "topic", locals: { topic: @topic, next_topic: @next_topic } %>
+<%= render partial: "topic_show", locals: { topic: @topic, next_topic: @next_topic } %>
 
 <p>
   <%= link_to t('.back', :default => t("helpers.links.back")),

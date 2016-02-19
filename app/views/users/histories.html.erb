@@ -1,0 +1,49 @@
+<div class="page-header">
+  <h1><%= @user.name %>'s Histories</h1>
+</div>
+
+<%= render partial: "topics/search", locals: { q: @q, panel_title: "Search #{@user.name}'s Histories" } %>
+
+<p>
+  <%= page_entries_info @histories %>
+</p>
+
+<table class="topic-table table table-striped">
+  <thead class="row">
+    <tr>
+      <th>
+        <div class="col-sm-5 col-xs-12">Title</div>
+        <div class="col-sm-2 col-xs-12">Tags</div>
+        <div class="col-sm-2 col-xs-12">Ratings</div>
+        <div class="col-sm-1 col-xs-12">Your Rating</div>
+        <div class="col-sm-1 col-xs-12">Times</div>
+        <div class="col-sm-1 col-xs-12">Last done on</div>
+      </th>
+    </tr>
+  </thead>
+  <tbody class="row">
+    <% @histories.each do |history| %>
+    <% topic = history.topic %>
+    <tr>
+      <td>
+        <div class="title col-sm-5 col-xs-12"><p><%= link_to topic.title, topic %></p></div>
+        <div class="col-sm-2 col-xs-12"><%= tags_to_label(topic) %></div>
+        <div class="col-sm-2 col-xs-12"><%= render partial: "topics/ratings", locals: { ratings: topic.ratings, verbose: true } %></div>
+        <div class="col-sm-1 col-xs-12"><%= rating_to_iocn(history) %></div>
+        <div class="col-sm-1 col-xs-12"><%= history.times %> <%= history.times > 1 ? "times" : "time" %></div>
+        <div class="col-sm-1 col-xs-12"><%= history.updated_at.in_time_zone(user_time_zone).strftime("%b %d %Y") %></div>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @histories %>
+
+<div>
+  <p>
+    <%= link_to user_path(@user.account), class: "btn btn-default" do %>
+      <span class="glyphicon glyphicon-chevron-left"></span> @<%= @user.account %>
+    <% end %>
+  </p>
+</div>
