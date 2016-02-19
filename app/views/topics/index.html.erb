@@ -15,29 +15,6 @@
   <%= page_entries_info @topics %>
 </p>
 
-<table class="topic-table table table-striped">
-  <thead class="row">
-    <tr>
-      <th>
-        <div class="col-sm-6 col-xs-12">Title</div>
-        <div class="col-sm-2 col-xs-12">Tags</div>
-        <div class="col-sm-2 col-xs-12">Ratings</div>
-        <div class="col-sm-2 col-xs-12">Created at</div>
-      </th>
-    </tr>
-  </thead>
-  <tbody class="row">
-    <% @topics.each do |topic| %>
-    <tr>
-      <td>
-        <div class="title col-sm-6 col-xs-12"><p><%= link_to topic.title, topic %></p></div>
-        <div class="col-sm-2 col-xs-12"><%= tags_to_label(topic) %></div>
-        <div class="col-sm-2 col-xs-12"><%= render partial: "topics/ratings", locals: { ratings: topic.ratings, verbose: true } %></div>
-        <div class="col-sm-2 col-xs-12"><%= topic.created_at.in_time_zone(user_time_zone) %></div>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render partial: "topics" %>
 
 <%= paginate @topics %>

@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'users/show'
-
   devise_for :users
   root to: 'conv_q#index'
 
@@ -11,6 +9,8 @@ Rails.application.routes.draw do
   resources :histories, only: [:create]
 
   get '/users/:account' => 'users#show', as: 'user'
+  get '/users/:account/histories' => 'users#histories', as: 'user_histories'
+  get '/users/:account/topics' => 'users#topics', as: 'user_topics'
 
   # API
   namespace :api, { format: 'json' } do
