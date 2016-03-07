@@ -1,6 +1,6 @@
 "use strict";
 
-$(document).on("ready page:load", function() {
+$(function() {
 
   var d_cq_timer = $("#cq-timer");
   if (d_cq_timer[0] != null) {
@@ -14,7 +14,13 @@ $(document).on("ready page:load", function() {
     var current_time = new Date();
     Cookies.set('time_zone', current_time.getTimezoneOffset());
   }
-
   set_time_zone_offset();
+
+  // clickable tr
+  $('tr[data-href]').addClass('clickable').click(function(e) {
+    if(!$(e.target).is('a')){
+      window.location = $(this).data('href');
+    }
+  });
 
 });
