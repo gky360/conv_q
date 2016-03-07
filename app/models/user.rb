@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
     # devise
     'sign_in', 'sign_out', 'password', 'cancel', 'sign_up', 'edit', 'confirmation', 'unlock', 'auth',
     # others
-    'account'
+    'account', 'config', 'configs', 'setting', 'settings'
   ]
 
   validates :name,
