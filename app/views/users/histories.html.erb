@@ -8,7 +8,7 @@
   <%= page_entries_info @histories %>
 </p>
 
-<table class="topic-table table table-striped">
+<table class="topic-table table table-hover">
   <thead class="row">
     <tr>
       <th>
@@ -24,9 +24,16 @@
   <tbody class="row">
     <% @histories.each do |history| %>
     <% topic = history.topic %>
-    <tr>
+    <tr data-href="<%= topic_path(topic) %>">
       <td>
-        <div class="title col-sm-5 col-xs-12"><p><%= link_to topic.title, topic %></p></div>
+        <div class="title col-sm-5 col-xs-12">
+          <p>
+            <%= topic.title %>
+            <%= link_to topic do %>
+            <span class="glyphicon glyphicon-play"></span>
+            <% end %>
+          </p>
+        </div>
         <div class="col-sm-2 col-xs-12"><%= tags_to_label(topic) %></div>
         <div class="col-sm-2 col-xs-12"><%= render partial: "topics/ratings", locals: { ratings: topic.ratings, verbose: true } %></div>
         <div class="col-sm-1 col-xs-12"><%= rating_to_iocn(history) %></div>
