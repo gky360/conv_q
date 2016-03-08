@@ -3,10 +3,13 @@ module TopicsHelper
   def tags_to_label(topic)
     labels = ""
     topic.tags.each do |tag|
-      labels += content_tag :span, tag.name, class: "label label-success topic-tag"
+      labels += link_to(tag.name, topics_path(tag_names: tag.name), class: "label label-success topic-tag")
     end
     if topic.source_url.present?
       labels += link_to(topic.source_url.match(/(http|https):\/\/(.*?)\//)[2], topic.source_url, class: "label label-default topic-tag")
+    end
+    if topic.user.present?
+      labels += link_to("@#{topic.user.account}", user_path(topic.user.account), class: "label label-default topic-tag")
     end
     return raw labels
   end
