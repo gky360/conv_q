@@ -4,8 +4,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :histories
-  has_many :topics
+  has_many :histories,
+    dependent: :destroy
+  has_many :topics,
+    dependent: :nullify
 
   NAME_EXCLUSION_LIST = [
     # actions
