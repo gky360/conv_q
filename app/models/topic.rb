@@ -1,7 +1,9 @@
 class Topic < ActiveRecord::Base
 
-  has_many :histories
-  has_many :tag_topics
+  has_many :histories,
+    dependent: :destroy
+  has_many :tag_topics,
+    dependent: :destroy
   has_many :tags, through: :tag_topics
   belongs_to :user
 

@@ -1,9 +1,9 @@
 class TopicsController < ApplicationController
 
-  before_action :set_topic, only: [:show, :edit, :update, :done_and_show]
+  before_action :set_topic, only: [:show, :edit, :update, :destroy, :done_and_show]
   before_action :set_next_topic, only: [:show, :done_and_show]
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :authenticate_user_by_topic, only: [:edit, :update]
+  before_action :authenticate_user_by_topic, only: [:edit, :update, :destroy]
 
   def index
     @q = q_params
@@ -41,6 +41,14 @@ class TopicsController < ApplicationController
       redirect_to @topic, notice: "Topic was successfully updated."
     else
       render action: "edit"
+    end
+  end
+
+  def destroy
+    if @topic.destroy
+      redirect_to user_topics_path(current_user.account), notice: "Topic was successfully deleted."
+    else
+      redirect_to @topic, alert: "We are sorry, but something went wrong while deleting the topic."
     end
   end
 
