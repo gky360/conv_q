@@ -26,4 +26,9 @@ class User < ActiveRecord::Base
     format: { with: /\A[a-z0-9_]{1,24}\z/ },
     exclusion: { in: NAME_EXCLUSION_LIST }
 
+  enum status: Hash[
+    admin:   1 << 5,
+    default: 0
+  ]
+
 end
