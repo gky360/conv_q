@@ -75,12 +75,6 @@ class TopicsController < ApplicationController
     @next_topic = Topic.rand_for_user(current_user).first
   end
 
-  def set_user_if_exists
-    if params[:user_account].present?
-      set_user
-    end
-  end
-
   def topic_params
     params.require(:topic).permit(:title, :source_url)
   end

@@ -32,8 +32,24 @@ class ApplicationController < ActionController::Base
     user_not_found if @user.nil?
   end
 
+  def set_user_if_exists
+    if params[:user_account].present?
+      set_user
+    end
+  end
+
   def user_not_found
     raise ActionController::RoutingError.new('User Not Found')
+  end
+
+  def set_topic
+    @topic = Topic.includes(:tags, :histories).find(params[:topic_id])
+  end
+
+  def set_topic_if_exists
+    if params[:topic_id].present?
+      set_topic
+    end
   end
 
 end

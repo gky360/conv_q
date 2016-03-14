@@ -17,10 +17,11 @@ $(function() {
   set_time_zone_offset();
 
   // clickable tr
+  $('tr[data-href] a').click(function(e) {
+    e.stopPropagation();
+  });
   $('tr[data-href]').addClass('clickable').click(function(e) {
-    if(!$(e.target).is('a')){
-      window.location = $(this).data('href');
-    }
+    window.location = $(this).data('href');
   });
 
 });

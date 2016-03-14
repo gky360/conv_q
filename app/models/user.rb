@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
     dependent: :destroy
   has_many :topics,
     dependent: :nullify
+  has_many :reports,
+    dependent: :destroy
 
   NAME_EXCLUSION_LIST = [
     # actions

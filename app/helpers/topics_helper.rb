@@ -1,5 +1,11 @@
 module TopicsHelper
 
+  def title_with_icon(topic)
+    html = topic.title
+    html += link_to(content_tag(:span, "", class: "glyphicon glyphicon-play topic-title-link"), topic)
+    return raw html
+  end
+
   def tags_to_label(topic)
     labels = ""
     topic.tags.each do |tag|
@@ -14,16 +20,15 @@ module TopicsHelper
     return raw labels
   end
 
-  def rating_to_iocn(history)
-    class_str = ""
-    case history.rating
-    when "like"
-      class_str = "glyphicon glyphicon-thumbs-up text-success"
-    when "dislike"
-      class_str = "glyphicon glyphicon-thumbs-down text-danger"
+  def reports_to_count(topic)
+    reports_count = topic.reports.count
+    reports_count_text = (reports_count === 0) ? "" : reports_count.to_s
+    text_color = (reports_count === 0) ? "text-muted" : "text-danger"
+    content_tag :div, class: "pull-right" do
+      link_to topic_reports_path(topic), class: text_color do |variable|
+        content_tag(:span, "", class: "glyphicon glyphicon-flag") + content_tag(:span, reports_count_text, class: "reports_count")
+      end
     end
-    return content_tag :span, "", class: class_str
   end
-
 
 end

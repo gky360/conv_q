@@ -1,4 +1,5 @@
 <% verbose ||= false %>
+<% ratings = topic.ratings %>
 <div class="ratings progress">
   <div class="progress-bar progress-bar-success" style="width: <%= ratings[:like] * 100.0 / (ratings[:total].zero? ? 1 : ratings[:total]) %>%">
     <% if verbose && ratings[:like] > 0 %>
@@ -11,3 +12,4 @@
     <% end %>
   </div>
 </div>
+<%= reports_to_count(topic) %>

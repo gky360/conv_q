@@ -5,6 +5,8 @@ class Topic < ActiveRecord::Base
   has_many :tag_topics,
     dependent: :destroy
   has_many :tags, through: :tag_topics
+  has_many :reports,
+    dependent: :destroy
   belongs_to :user
 
   validates :title,

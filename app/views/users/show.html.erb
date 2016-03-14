@@ -23,5 +23,8 @@
   <p>
     <%= link_to "Histories", user_histories_path(@user.account), class: "btn btn-primary" %>
     <%= link_to "Topics", user_topics_path(@user.account), class: "btn btn-primary" %>
+    <%= link_to user_reports_path(@user.account), class: "btn btn-link" do %>
+      <span class="glyphicon glyphicon-flag"></span> Reports
+    <% end %>
   </p>
 </div>
