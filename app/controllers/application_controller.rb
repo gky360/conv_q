@@ -27,4 +27,13 @@ class ApplicationController < ActionController::Base
     params.permit(:title, :tag_names)
   end
 
+  def set_user
+    @user = User.find_by(account: params[:user_account])
+    user_not_found if @user.nil?
+  end
+
+  def user_not_found
+    raise ActionController::RoutingError.new('User Not Found')
+  end
+
 end

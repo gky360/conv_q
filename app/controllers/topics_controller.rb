@@ -2,12 +2,16 @@ class TopicsController < ApplicationController
 
   before_action :set_topic, only: [:show, :edit, :update, :destroy, :done_and_show]
   before_action :set_next_topic, only: [:show, :done_and_show]
+  before_action :set_user_if_exists, only: [:index]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :authenticate_user_by_topic, only: [:edit, :update, :destroy]
 
   def index
     @q = q_params
     @topics = Topic.includes(:tags, :histories).search(@q).page(params[:page])
+    if @user.present?
+      @topics = @topics.where(user_id: @user.id)
+    end
   end
 
   def show
@@ -20,8 +24,6 @@ class TopicsController < ApplicationController
   def create
     @topic = Topic.new(topic_params)
     @topic.user_id = current_user.id
-    # TODO: tags
-
     if @topic.save
       @topic.tags = Tag.all_with_names(params[:tag_names].to_s.split(","))
       redirect_to @topic, notice: "Topic was successfully created."
@@ -71,6 +73,12 @@ class TopicsController < ApplicationController
 
   def set_next_topic
     @next_topic = Topic.rand_for_user(current_user).first
+  end
+
+  def set_user_if_exists
+    if params[:user_account].present?
+      set_user
+    end
   end
 
   def topic_params
