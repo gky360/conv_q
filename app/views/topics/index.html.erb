@@ -1,9 +1,16 @@
 <%- model_class = Topic -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1>
+  <% if @user.nil? %>
+    <%=t '.title', :default => model_class.model_name.human.pluralize.titleize %>
+  <% else %>
+    <%= @user.name %>'s Topics
+  <% end %>
+  </h1>
 </div>
 
-<%= render partial: "topics/search", locals: { q: @q } %>
+<% panel_title = "Search #{@user.name}'s Topics" if @user.present? %>
+<%= render partial: "topics/search", locals: { q: @q, panel_title: panel_title } %>
 
 <div>
   <p>
@@ -18,3 +25,13 @@
 <%= render partial: "topics" %>
 
 <%= paginate @topics %>
+
+<% if @user.present? %>
+<div>
+  <p>
+    <%= link_to user_path(@user.account), class: "btn btn-default" do %>
+      <span class="glyphicon glyphicon-chevron-left"></span> @<%= @user.account %>
+    <% end %>
+  </p>
+</div>
+<% end %>

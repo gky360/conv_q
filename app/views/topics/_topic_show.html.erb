@@ -4,44 +4,7 @@
   <dt><strong><%= Topic.human_attribute_name(:tags) %>:</strong></dt>
   <dd><div class="tags"><p><%= tags_to_label(topic) %></p></div></dd>
   <dt><strong>Ratings:</strong></dt>
-  <dd><%= render partial: "topics/ratings", locals: { ratings: topic.ratings, verbose: true } %></dd>
+  <dd>
+    <%= render partial: "topics/ratings", locals: { topic: topic, verbose: true } %>
+  </dd>
 </dl>
-
-<div id="cq-timer" class="row">
-  <div class="raito-fix col-sm-4 col-sm-offset-4">
-    <div id="cq-timer-body">
-      <canvas id="cq-timer-canvas"></canvas>
-      <div id="cq-timer-seconds-wrap">
-        <div id="cq-timer-seconds">
-          <span class="glyphicon glyphicon-play"></span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="cq-timer-buttons" class="col-sm-4 col-sm-offset-4">
-    <%= form_tag topic_with_done_path(next_topic), method: :post do %>
-      <%= hidden_field_tag "done_topic_id", topic.id %>
-      <div class="text-center">
-        <div id="cq-timer-done" class="radio">
-          <label id="cq-timer-done-like" class="text-success">
-            <%= radio_button_tag "rating", "like", false %>
-            <span class="glyphicon glyphicon-thumbs-up"></span> Like
-          </label>
-          <label id="cq-timer-done-dislike" class="text-danger">
-            <%= radio_button_tag "rating", "dislike", false %>
-            <span class="glyphicon glyphicon-thumbs-down"></span> Dislike
-          </label>
-          <%= button_tag name: "done", type: "submit", id: "cq-timer-done-submit", class: "btn btn-success" do %>
-            Done <span class="glyphicon glyphicon-ok"></span>
-          <% end %>
-        </div>
-        <p>
-          <%= link_to "Topics list", topics_path, class: "btn btn-primary" %>
-          <%= link_to topic_path(next_topic), class: "btn btn-default" do %>
-            Skip <span class="glyphicon glyphicon-chevron-right"></span>
-          <% end %>
-        </p>
-      </div>
-    <% end %>
-  </div>
-</div>

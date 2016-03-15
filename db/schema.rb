@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160218122840) do
+ActiveRecord::Schema.define(version: 20160314100113) do
 
   create_table "histories", force: :cascade do |t|
     t.integer  "topic_id",   limit: 4
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(version: 20160218122840) do
   end
 
   add_index "histories", ["topic_id", "user_id"], name: "index_histories_on_topic_id_and_user_id", unique: true, using: :btree
+
+  create_table "reports", force: :cascade do |t|
+    t.integer  "topic_id",    limit: 4,                 null: false
+    t.integer  "user_id",     limit: 4,                 null: false
+    t.integer  "reason_flag", limit: 4,     default: 0, null: false
+    t.text     "detail",      limit: 65535
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+  end
+
+  add_index "reports", ["topic_id", "user_id"], name: "index_reports_on_topic_id_and_user_id", unique: true, using: :btree
 
   create_table "tag_topics", force: :cascade do |t|
     t.integer  "tag_id",     limit: 4, null: false

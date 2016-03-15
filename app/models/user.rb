@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
     dependent: :destroy
   has_many :topics,
     dependent: :nullify
+  has_many :reports,
+    dependent: :destroy
 
   NAME_EXCLUSION_LIST = [
     # actions
@@ -25,5 +27,10 @@ class User < ActiveRecord::Base
     uniqueness: true,
     format: { with: /\A[a-z0-9_]{1,24}\z/ },
     exclusion: { in: NAME_EXCLUSION_LIST }
+
+  enum status: Hash[
+    admin:   1 << 5,
+    default: 0
+  ]
 
 end
