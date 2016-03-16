@@ -753,7 +753,7 @@
     <Content Include="www\css\style.css">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>00000000</hash>
+      <hash>be2f4916</hash>
       <icon>
       </icon>
       <mime>text/css</mime>
@@ -762,13 +762,42 @@
       <path>/www/css/style.css</path>
       <remark>
       </remark>
+      <lastModified>635937425004567337</lastModified>
+    </Content>
+    <Content Include="www\histories\index.html">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>d3e8c110</hash>
+      <icon>
+      </icon>
+      <mime>text/html</mime>
+      <os>
+      </os>
+      <path>/www/histories/index.html</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Content>
+    <Content Include="www\home.html">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>e88423b4</hash>
+      <icon>
+      </icon>
+      <mime>text/html</mime>
+      <os>
+      </os>
+      <path>/www/home.html</path>
+      <remark>
+      </remark>
       <lastModified>
       </lastModified>
     </Content>
     <Content Include="www\index.html">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>447aaba4</hash>
+      <hash>7e50771a</hash>
       <icon>
       </icon>
       <mime>text/html</mime>
@@ -777,49 +806,47 @@
       <path>/www/index.html</path>
       <remark>
       </remark>
-      <lastModified>
-      </lastModified>
-    </Content>
-    <Content Include="www\page1.html">
-      <type>file</type>
-      <deletable>True</deletable>
-      <hash>c519ec10</hash>
-      <icon>
-      </icon>
-      <mime>text/html</mime>
-      <os>
-      </os>
-      <path>/www/page1.html</path>
-      <remark>
-      </remark>
-      <lastModified>
-      </lastModified>
-    </Content>
-    <Content Include="www\page2.html">
-      <type>file</type>
-      <deletable>True</deletable>
-      <hash>d8b71e06</hash>
-      <icon>
-      </icon>
-      <mime>text/html</mime>
-      <os>
-      </os>
-      <path>/www/page2.html</path>
-      <remark>
-      </remark>
-      <lastModified>
-      </lastModified>
+      <lastModified>635937424994876783</lastModified>
     </Content>
     <Content Include="www\README.md">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>9d817eca</hash>
+      <hash>89e6a896</hash>
       <icon>
       </icon>
       <mime>text/markdown</mime>
       <os>
       </os>
       <path>/www/README.md</path>
+      <remark>
+      </remark>
+      <lastModified>635935195093710707</lastModified>
+    </Content>
+    <Content Include="www\topics\index.html">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>2f3de3a5</hash>
+      <icon>
+      </icon>
+      <mime>text/html</mime>
+      <os>
+      </os>
+      <path>/www/topics/index.html</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Content>
+    <Content Include="www\users\account.html">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>fa10f19d</hash>
+      <icon>
+      </icon>
+      <mime>text/html</mime>
+      <os>
+      </os>
+      <path>/www/users/account.html</path>
       <remark>
       </remark>
       <lastModified>
@@ -1120,6 +1147,57 @@
       <os>
       </os>
       <path>/www/css</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Folder>
+    <Folder Include="www\histories">
+      <type>dir</type>
+      <deletable>True</deletable>
+      <hash>
+      </hash>
+      <icon>
+      </icon>
+      <mime>
+      </mime>
+      <os>
+      </os>
+      <path>/www/histories</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Folder>
+    <Folder Include="www\topics">
+      <type>dir</type>
+      <deletable>True</deletable>
+      <hash>
+      </hash>
+      <icon>
+      </icon>
+      <mime>
+      </mime>
+      <os>
+      </os>
+      <path>/www/topics</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Folder>
+    <Folder Include="www\users">
+      <type>dir</type>
+      <deletable>True</deletable>
+      <hash>
+      </hash>
+      <icon>
+      </icon>
+      <mime>
+      </mime>
+      <os>
+      </os>
+      <path>/www/users</path>
       <remark>
       </remark>
       <lastModified>
