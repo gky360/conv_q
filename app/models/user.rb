@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  include DeviseTokenAuth::Concerns::User
 
   has_many :histories,
     dependent: :destroy
@@ -29,8 +30,8 @@ class User < ActiveRecord::Base
     exclusion: { in: NAME_EXCLUSION_LIST }
 
   enum status: Hash[
-    admin:   1 << 5,
-    default: 0
+    admin:   0b00100000,
+    default: 0b00000000
   ]
 
 end

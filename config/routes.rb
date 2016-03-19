@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   # API
   namespace :api, { format: 'json' } do
     namespace :v1 do
+      root to: 'root#index'
+      mount_devise_token_auth_for 'User', at: 'auth'
       resources :tags, only: [:index]
     end
   end
