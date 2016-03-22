@@ -842,7 +842,7 @@
     <Content Include="www\css\style.css">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>be2f4916</hash>
+      <hash>0021ac7d</hash>
       <icon>
       </icon>
       <mime>text/css</mime>
@@ -851,7 +851,7 @@
       <path>/www/css/style.css</path>
       <remark>
       </remark>
-      <lastModified>635937425004567337</lastModified>
+      <lastModified>635941138729784343</lastModified>
     </Content>
     <Content Include="www\histories\index.html">
       <type>file</type>
@@ -886,7 +886,7 @@
     <Content Include="www\index.html">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>f889a24e</hash>
+      <hash>f6a15cda</hash>
       <icon>
       </icon>
       <mime>text/html</mime>
@@ -895,12 +895,12 @@
       <path>/www/index.html</path>
       <remark>
       </remark>
-      <lastModified>635940987543890912</lastModified>
+      <lastModified>635942861966309213</lastModified>
     </Content>
     <Content Include="www\js\app.js">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>188740e7</hash>
+      <hash>aaf2ec41</hash>
       <icon>
       </icon>
       <mime>text/javascript</mime>
@@ -909,13 +909,12 @@
       <path>/www/js/app.js</path>
       <remark>
       </remark>
-      <lastModified>
-      </lastModified>
+      <lastModified>635940993258627777</lastModified>
     </Content>
     <Content Include="www\js\common.js">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>863e8466</hash>
+      <hash>86105e9b</hash>
       <icon>
       </icon>
       <mime>text/javascript</mime>
@@ -924,13 +923,12 @@
       <path>/www/js/common.js</path>
       <remark>
       </remark>
-      <lastModified>
-      </lastModified>
+      <lastModified>635941155852213690</lastModified>
     </Content>
     <Content Include="www\js\controllers\root_controller.js">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>dff7dde9</hash>
+      <hash>717bcadd</hash>
       <icon>
       </icon>
       <mime>text/javascript</mime>
@@ -939,13 +937,12 @@
       <path>/www/js/controllers/root_controller.js</path>
       <remark>
       </remark>
-      <lastModified>
-      </lastModified>
+      <lastModified>635941155631021038</lastModified>
     </Content>
     <Content Include="www\js\controllers\users_controller.js">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>34264a74</hash>
+      <hash>b00f03e4</hash>
       <icon>
       </icon>
       <mime>text/javascript</mime>
@@ -954,8 +951,7 @@
       <path>/www/js/controllers/users_controller.js</path>
       <remark>
       </remark>
-      <lastModified>
-      </lastModified>
+      <lastModified>635942861963739066</lastModified>
     </Content>
     <Content Include="www\js\services\user.js">
       <type>file</type>
@@ -1004,7 +1000,7 @@
     <Content Include="www\users\account.html">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>5912ca1e</hash>
+      <hash>915502f8</hash>
       <icon>
       </icon>
       <mime>text/html</mime>
@@ -1013,7 +1009,22 @@
       <path>/www/users/account.html</path>
       <remark>
       </remark>
-      <lastModified>635940987529990117</lastModified>
+      <lastModified>635942861961158919</lastModified>
+    </Content>
+    <Content Include="www\users\sign_in.html">
+      <type>file</type>
+      <deletable>true</deletable>
+      <hash>b363bae9</hash>
+      <icon>
+      </icon>
+      <mime>
+      </mime>
+      <os>
+      </os>
+      <path>/www/users/sign_in.html</path>
+      <remark>
+      </remark>
+      <lastModified>635942861959178805</lastModified>
     </Content>
   </ItemGroup>
   <ItemGroup>

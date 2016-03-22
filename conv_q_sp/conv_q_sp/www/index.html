@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body ng-controller="RootController">
-  <ons-tabbar class="tabbar-main">
+  <ons-tabbar var="app.tabbar" class="tabbar-main">
     <ons-tab
       page="home.html"
       icon="ion-home"
@@ -36,7 +36,13 @@
       icon="ion-folder"
       label="Your Topics"></ons-tab>
     <ons-tab
+      ng-show="current_user.is_signed_in()"
       page="users/account.html"
+      icon="ion-person"
+      label="Account"></ons-tab>
+    <ons-tab
+      ng-hide="current_user.is_signed_in()"
+      page="users/sign_in.html"
       icon="ion-person"
       label="Account"></ons-tab>
   </ons-tabbar>

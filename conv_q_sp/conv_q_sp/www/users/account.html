@@ -1,8 +1,19 @@
-<ons-page>
+<ons-page ng-controller="UsersController">
 
   <h1>Account</h1>
 
-  <h3>current_user</h3>
-  {{current_user | json}}
+  <h4>current_user</h4>
+  <dt>id</dt>
+  <dd>{{current_user.id}}</dd>
+  <dt>Name</dt>
+  <dd>{{current_user.name}}</dd>
+  <dt>Account</dt>
+  <dd>{{current_user.account}}</dd>
+  <dt>Email</dt>
+  <dd>{{current_user.email}}</dd>
+
+  <ons-button modifier="large" ng-click="sign_out()">
+    ログアウト
+  </ons-button>
 
 </ons-page>

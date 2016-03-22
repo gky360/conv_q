@@ -9,6 +9,9 @@ app.controller("UsersController", [
    */
   var init = function() {
     console.log("users#init");
+    console.log("scope: " + $scope.current_user.email);
+    console.log("app: " + app.current_user.email);
+    $scope.hoge = "hogehoge";
   };
   init();
 
@@ -23,31 +26,31 @@ app.controller("UsersController", [
     }, function(response) {
       ons.notification.alert({
         title: "ログインが完了しました。",
-        messageHTML: "ようこそ " + app.current_user.sei + app.current_user.mei + " さん",
+        messageHTML: "ようこそ " + app.current_user.name + " さん",
         buttonLabel: 'OK',
         callback: after_sign_in_success
       });
     }, function(response) {
-      var message = "";
+      var messageHTML = "";
       if (response === null || response.status === 0) {
         // サーバーに接続できなかったとき
         common.alert_connection_error();
         return;
-      } else if ($.inArray(response.errors, "bad_credentials") >= 0) {
-        message = "ユーザー名かパスワードが間違っています。"
       } else {
-        message = "時間をあけて再試行してください。";
+        if (response.errors) {
+          messageHTML = common.full_messages_to_html(response.errors); /////////////  
+        }
       }
       ons.notification.alert({
         title: "ログインに失敗しました",
-        messageHTML: message,
+        messageHTML: messageHTML,
         buttonLabel: 'OK',
         callback: null
       });
     });
 
     var after_sign_in_success = function() {
-      app.navi.resetToPage('home.html');
+      app.tabbar.setActiveTab(4);
     };
   };
 
@@ -75,13 +78,13 @@ app.controller("UsersController", [
       }
 
       app.current_user.sign_out(function(response) {
-        app.menu.closeMenu();
-        app.navi.resetToPage('welcome.html');
         ons.notification.alert({
           title: "ログアウト完了",
           messageHTML: "ログアウトが完了しました。",
           buttonLabel: 'OK',
-          callback: null
+          callback: function() {
+            app.tabbar.setActiveTab(4);
+          }
         });
       }, function(response) {
         var message = "";
@@ -89,8 +92,6 @@ app.controller("UsersController", [
           // サーバーに接続できなかったとき
           common.alert_connection_error();
         } else if ($.inArray(response.errors, "user_not_found") >= 0) {
-          app.menu.closeMenu();
-          app.navi.resetToPage('welcome.html');
           ons.notification.alert({
             title: "ログアウトに失敗しました",
             messageHTML: "すでにログアウトしています。",
