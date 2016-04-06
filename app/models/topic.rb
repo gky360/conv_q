@@ -17,9 +17,9 @@ class Topic < ActiveRecord::Base
 
   paginates_per 20
 
-  TITLE_SPLITTTER = " ; "
+  TITLE_SPLITTTER = "\n  ; "
 
-  scope :rand, -> { order("RAND()") }
+  include CommonScope
 
   def ratings
     return @ratings if @ratings

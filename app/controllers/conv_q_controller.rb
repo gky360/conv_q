@@ -1,4 +1,4 @@
-class ConvQController < ApplicationController
+class ConvQController < AppController
 
   def index
     @topic = Topic.rand_for_user(current_user).first

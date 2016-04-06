@@ -1,4 +1,4 @@
-class TopicsController < ApplicationController
+class TopicsController < AppController
 
   before_action :set_topic, only: [:show, :edit, :update, :destroy, :done_and_show]
   before_action :set_next_topic, only: [:show, :done_and_show]

@@ -1,6 +1,6 @@
 # users
 
-user = User.where(name: "Admin", account: "admin", email: "scarletrunner7000@gmail.com").first_or_initialize
+user = User.where(name: "Admin", account: "admin", email: "admin@gmail.com").first_or_initialize
 user.password = "hogehoge"
 user.save
 user.admin!
