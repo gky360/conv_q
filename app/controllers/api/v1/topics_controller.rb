@@ -1,19 +1,34 @@
 class Api::V1::TopicsController < Api::V1::ApiController
 
   MAX_LIMIT = 25
-  PERMITTED_COLUMNS = Array[
+  PERMITTED_FIELDS = Array[
     :id, :title, :source_url, :created_at, :updated_at, :user_id
   ]
 
+  before_action :q_params,
+    only: [:index]
+  before_action -> { limit_param_with_max(MAX_LIMIT) },
+    only: [:index, :rand_for_user]
+  before_action :offset_param,
+    only: [:index]
+  before_action -> { select_params_with_permit(PERMITTED_FIELDS) },
+    only: [:index, :rand_for_user]
+  before_action -> { order_params_with_permit(PERMITTED_FIELDS) },
+    only: [:index]
+
   def index
-    @q = q_params
-    @limit = [(params[:limit] || MAX_LIMIT).to_i, MAX_LIMIT].min
-    @offset = params[:offset].to_i
     @topics = Topic.search(@q)
         .offset(@offset)
         .limit(@limit)
-        .fields_with_permit(params[:select], PERMITTED_COLUMNS)
-        .sort_with_permit(params[:order], PERMITTED_COLUMNS)
+        .select(@select)
+        .order(@order)
+    render json: @topics
+  end
+
+  def rand_for_user
+    @topics = Topic.rand_for_user(current_user)
+        .limit(@limit)
+        .select(@select)
     render json: @topics
   end
 

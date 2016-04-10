@@ -19,7 +19,7 @@ class Topic < ActiveRecord::Base
 
   TITLE_SPLITTTER = "\n  ; "
 
-  include CommonScope
+  scope :rand, -> { order("RAND()") }
 
   def ratings
     return @ratings if @ratings
@@ -52,12 +52,10 @@ class Topic < ActiveRecord::Base
     q[:title].split(/[ ,]+/).each do |title|
       topics = topics.where("`title` LIKE ?", "%#{title}%")
     end
-    if q[:tag_names]
-      q[:tag_names].split(",").each do |tag_name|
-        tag = Tag.find_by(name: tag_name)
-        next if tag.nil?
-        topics = topics.where(id: tag.topic_ids)
-      end
+    q[:tag_names].split(",").each do |tag_name|
+      tag = Tag.find_by(name: tag_name)
+      next if tag.nil?
+      topics = topics.where(id: tag.topic_ids)
     end
 
     return topics

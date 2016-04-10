@@ -26,7 +26,7 @@ RSpec.describe Api::V1::TopicsController, type: :controller do
       get :index
       topics = assigns(:topics)
       fields = topics.sample.attributes.keys.map(&:to_sym)
-      expect(fields.sort).to eq Api::V1::TopicsController::PERMITTED_COLUMNS.sort
+      expect(fields.sort).to eq Api::V1::TopicsController::PERMITTED_FIELDS.sort
     end
 
     context "with param q" do
@@ -65,9 +65,9 @@ RSpec.describe Api::V1::TopicsController, type: :controller do
 
     context "with param :fields" do
       it "return only specified fields of topics" do
-        @sample_fields ||= Api::V1::TopicsController::PERMITTED_COLUMNS if @sample_fields.empty?
+        @sample_fields ||= Api::V1::TopicsController::PERMITTED_FIELDS if @sample_fields.empty?
         @sample_fields.delete(:id)
-        expected_fields = @sample_fields.select { |field| Api::V1::TopicsController::PERMITTED_COLUMNS.include?(field) }
+        expected_fields = @sample_fields.select { |field| Api::V1::TopicsController::PERMITTED_FIELDS.include?(field) }
         get :index, select: @sample_fields.map { |field| field.to_s }.join(",")
         topics = assigns(:topics)
         fields = topics.sample.attributes.keys.map(&:to_sym)
