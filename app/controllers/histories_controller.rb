@@ -1,7 +1,7 @@
 class HistoriesController < AppController
 
   before_action :set_user
-  before_action :q_params, only: [:index]
+  before_action :set_q_params, only: [:index]
 
   def index
     @histories = History.includes(:topic)

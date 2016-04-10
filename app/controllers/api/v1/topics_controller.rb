@@ -5,15 +5,15 @@ class Api::V1::TopicsController < Api::V1::ApiController
     :id, :title, :source_url, :created_at, :updated_at, :user_id
   ]
 
-  before_action :q_params,
+  before_action :set_q_params,
     only: [:index]
-  before_action -> { limit_param_with_max(MAX_LIMIT) },
+  before_action -> { set_limit_param_with_max(MAX_LIMIT) },
     only: [:index, :rand_for_user]
-  before_action :offset_param,
+  before_action :set_offset_param,
     only: [:index]
-  before_action -> { select_params_with_permit(PERMITTED_FIELDS) },
+  before_action -> { set_select_params_with_permit(PERMITTED_FIELDS) },
     only: [:index, :rand_for_user]
-  before_action -> { order_params_with_permit(PERMITTED_FIELDS) },
+  before_action -> { set_order_params_with_permit(PERMITTED_FIELDS) },
     only: [:index]
 
   def index

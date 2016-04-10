@@ -5,7 +5,7 @@ class TopicsController < AppController
   before_action :set_user_if_exists, only: [:index]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :authenticate_user_by_topic, only: [:edit, :update, :destroy]
-  before_action :q_params, only: [:index]
+  before_action :set_q_params, only: [:index]
 
   def index
     @topics = Topic.includes(:tags, :histories).search(@q).page(params[:page])
@@ -61,7 +61,9 @@ class TopicsController < AppController
       history.rating = History.ratings[params[:rating].to_sym]
     end
     history.save
-    redirect_to @topic
+    set_histories_count
+    histories_count_text = "Today: #{@histories_count[:today]} / Total: #{@histories_count[:total]}"
+    redirect_to @topic, notice: "The topic was successfully checked as done. (#{histories_count_text})"
   end
 
 
@@ -82,6 +84,14 @@ class TopicsController < AppController
   def authenticate_user_by_topic
     if !@topic.by_user?(current_user)
       redirect_to root_path, alert: 'Permission denied.'
+    end
+  end
+
+  def set_histories_count
+    @histories_count = {}
+    if user_signed_in?
+      @histories_count[:total] = current_user.histories.count
+      @histories_count[:today] = current_user.histories.where('updated_at >= ?', Date.today).count
     end
   end
 

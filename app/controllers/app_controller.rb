@@ -23,7 +23,7 @@ class AppController < ApplicationController
     devise_parameter_sanitizer.for(:account_update).push(:name)
   end
 
-  def q_params
+  def set_q_params
     @q = params.permit(:title, :tag_names)
   end
 
@@ -38,7 +38,7 @@ class AppController < ApplicationController
     end
   end
 
-  def user_not_found
+  def user_not_found!
     raise ActionController::RoutingError.new('User Not Found')
   end
 

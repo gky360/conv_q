@@ -18,18 +18,18 @@ class Api::V1::ApiController < ApplicationController
     logger.debug "current_user: #{user_signed_in? ? current_user.email : ''}"
   end
 
-  def q_params
+  def set_q_params
     @q = params.permit(:title, :tag_names)
   end
 
-  def limit_param_with_max(max_limit)
+  def set_limit_param_with_max(max_limit)
     @limit = params[:limit].present? ? params[:limit].to_i : max_limit
     @limit = @limit < 0 ? 0 : @limit
     @limit = @limit > max_limit ? max_limit : @limit
     return @limit
   end
 
-  def offset_param
+  def set_offset_param
     @offset = params[:offset].to_i
   end
 
@@ -37,7 +37,7 @@ class Api::V1::ApiController < ApplicationController
   #   if not present, this scope returns all fields included in permitted_fields
   # [permitted_fields] array of syms of fields you permit clients to access
   #   if not present, this scope returns all fields of the model
-  def select_params_with_permit(permitted_fields)
+  def set_select_params_with_permit(permitted_fields)
     fields_text = params[:select] || ""
     permitted_fields ||= []
     fields = fields_text.split(",")
@@ -56,7 +56,7 @@ class Api::V1::ApiController < ApplicationController
   #     "updated_at"  -> updated_at: :asc
   #     "-updated_at" -> updated_at: :desc
   # [permitted_fields] array of syms of fields you permit clients to access
-  def order_params_with_permit(permitted_fields)
+  def set_order_params_with_permit(permitted_fields)
     fields_text = params[:order] || ""
     permitted_fields ||= []
     @order = {}
