@@ -1,4 +1,4 @@
-class HistoriesController < ApplicationController
+class HistoriesController < AppController
 
   before_action :set_user
 
