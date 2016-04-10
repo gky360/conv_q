@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < AppController
 
   before_action :set_user
 

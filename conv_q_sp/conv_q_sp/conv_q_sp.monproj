@@ -105,6 +105,36 @@
       <lastModified>
       </lastModified>
     </Content>
+    <Content Include="www\components\angular-cookie.js">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>5bd44cf0</hash>
+      <icon>
+      </icon>
+      <mime>text/javascript</mime>
+      <os>
+      </os>
+      <path>/www/components/angular-cookie.js</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Content>
+    <Content Include="www\components\angular-cookies.js">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>e1ca5b1b</hash>
+      <icon>
+      </icon>
+      <mime>text/javascript</mime>
+      <os>
+      </os>
+      <path>/www/components/angular-cookies.js</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Content>
     <Content Include="www\components\loader.css">
       <type>file</type>
       <deletable>True</deletable>
@@ -123,7 +153,7 @@
     <Content Include="www\components\loader.js">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>e04225b4</hash>
+      <hash>13ae81e5</hash>
       <icon>
       </icon>
       <mime>text/javascript</mime>
@@ -132,8 +162,7 @@
       <path>/www/components/loader.js</path>
       <remark>
       </remark>
-      <lastModified>
-      </lastModified>
+      <lastModified>635940987560631870</lastModified>
     </Content>
     <Content Include="www\components\monaca-cordova-loader\.bower.json">
       <type>file</type>
@@ -220,6 +249,51 @@
       <os>
       </os>
       <path>/www/components/monaca-core-utils/monaca-core-utils.js</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Content>
+    <Content Include="www\components\monaca-jquery\.bower.json">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>e25331b6</hash>
+      <icon>
+      </icon>
+      <mime>text/javascript</mime>
+      <os>
+      </os>
+      <path>/www/components/monaca-jquery/.bower.json</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Content>
+    <Content Include="www\components\monaca-jquery\bower.json">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>1d85471f</hash>
+      <icon>
+      </icon>
+      <mime>text/javascript</mime>
+      <os>
+      </os>
+      <path>/www/components/monaca-jquery/bower.json</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Content>
+    <Content Include="www\components\monaca-jquery\jquery.js">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>2409442b</hash>
+      <icon>
+      </icon>
+      <mime>text/javascript</mime>
+      <os>
+      </os>
+      <path>/www/components/monaca-jquery/jquery.js</path>
       <remark>
       </remark>
       <lastModified>
@@ -750,10 +824,25 @@
       <lastModified>
       </lastModified>
     </Content>
+    <Content Include="www\components\ng-token-auth.js">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>94bb3ec7</hash>
+      <icon>
+      </icon>
+      <mime>text/javascript</mime>
+      <os>
+      </os>
+      <path>/www/components/ng-token-auth.js</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Content>
     <Content Include="www\css\style.css">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>be2f4916</hash>
+      <hash>0021ac7d</hash>
       <icon>
       </icon>
       <mime>text/css</mime>
@@ -762,7 +851,7 @@
       <path>/www/css/style.css</path>
       <remark>
       </remark>
-      <lastModified>635937425004567337</lastModified>
+      <lastModified>635941138729784343</lastModified>
     </Content>
     <Content Include="www\histories\index.html">
       <type>file</type>
@@ -797,7 +886,7 @@
     <Content Include="www\index.html">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>7e50771a</hash>
+      <hash>f6a15cda</hash>
       <icon>
       </icon>
       <mime>text/html</mime>
@@ -806,7 +895,78 @@
       <path>/www/index.html</path>
       <remark>
       </remark>
-      <lastModified>635937424994876783</lastModified>
+      <lastModified>635942861966309213</lastModified>
+    </Content>
+    <Content Include="www\js\app.js">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>aaf2ec41</hash>
+      <icon>
+      </icon>
+      <mime>text/javascript</mime>
+      <os>
+      </os>
+      <path>/www/js/app.js</path>
+      <remark>
+      </remark>
+      <lastModified>635940993258627777</lastModified>
+    </Content>
+    <Content Include="www\js\common.js">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>86105e9b</hash>
+      <icon>
+      </icon>
+      <mime>text/javascript</mime>
+      <os>
+      </os>
+      <path>/www/js/common.js</path>
+      <remark>
+      </remark>
+      <lastModified>635941155852213690</lastModified>
+    </Content>
+    <Content Include="www\js\controllers\root_controller.js">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>717bcadd</hash>
+      <icon>
+      </icon>
+      <mime>text/javascript</mime>
+      <os>
+      </os>
+      <path>/www/js/controllers/root_controller.js</path>
+      <remark>
+      </remark>
+      <lastModified>635941155631021038</lastModified>
+    </Content>
+    <Content Include="www\js\controllers\users_controller.js">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>b00f03e4</hash>
+      <icon>
+      </icon>
+      <mime>text/javascript</mime>
+      <os>
+      </os>
+      <path>/www/js/controllers/users_controller.js</path>
+      <remark>
+      </remark>
+      <lastModified>635942861963739066</lastModified>
+    </Content>
+    <Content Include="www\js\services\user.js">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>4681099d</hash>
+      <icon>
+      </icon>
+      <mime>text/javascript</mime>
+      <os>
+      </os>
+      <path>/www/js/services/user.js</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
     </Content>
     <Content Include="www\README.md">
       <type>file</type>
@@ -840,7 +1000,7 @@
     <Content Include="www\users\account.html">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>fa10f19d</hash>
+      <hash>915502f8</hash>
       <icon>
       </icon>
       <mime>text/html</mime>
@@ -849,8 +1009,22 @@
       <path>/www/users/account.html</path>
       <remark>
       </remark>
-      <lastModified>
-      </lastModified>
+      <lastModified>635942861961158919</lastModified>
+    </Content>
+    <Content Include="www\users\sign_in.html">
+      <type>file</type>
+      <deletable>true</deletable>
+      <hash>b363bae9</hash>
+      <icon>
+      </icon>
+      <mime>
+      </mime>
+      <os>
+      </os>
+      <path>/www/users/sign_in.html</path>
+      <remark>
+      </remark>
+      <lastModified>635942861959178805</lastModified>
     </Content>
   </ItemGroup>
   <ItemGroup>
@@ -961,6 +1135,22 @@
       <os>
       </os>
       <path>/www/components/monaca-core-utils</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Folder>
+    <Folder Include="www\components\monaca-jquery">
+      <type>dir</type>
+      <deletable>True</deletable>
+      <hash>
+      </hash>
+      <icon>component</icon>
+      <mime>
+      </mime>
+      <os>
+      </os>
+      <path>/www/components/monaca-jquery</path>
       <remark>
       </remark>
       <lastModified>
@@ -1164,6 +1354,57 @@
       <os>
       </os>
       <path>/www/histories</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Folder>
+    <Folder Include="www\js">
+      <type>dir</type>
+      <deletable>True</deletable>
+      <hash>
+      </hash>
+      <icon>
+      </icon>
+      <mime>
+      </mime>
+      <os>
+      </os>
+      <path>/www/js</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Folder>
+    <Folder Include="www\js\controllers">
+      <type>dir</type>
+      <deletable>True</deletable>
+      <hash>
+      </hash>
+      <icon>
+      </icon>
+      <mime>
+      </mime>
+      <os>
+      </os>
+      <path>/www/js/controllers</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Folder>
+    <Folder Include="www\js\services">
+      <type>dir</type>
+      <deletable>True</deletable>
+      <hash>
+      </hash>
+      <icon>
+      </icon>
+      <mime>
+      </mime>
+      <os>
+      </os>
+      <path>/www/js/services</path>
       <remark>
       </remark>
       <lastModified>

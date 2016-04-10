@@ -1,7 +1,24 @@
 /* **************************************************
-* others
-************************************************** */
+ * common
+ ************************************************** */
+
+.text-center {
+  text-align: center;
+}
 
 .tabbar-main .tab-text {
   font-size: 15px;
+}
+
+.center-form {
+  height: 80%;
+}
+.center-form input[type=email],
+.center-form input[type=password] {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  outline: none;
+  padding: 10px 0;
+  font-size: 18px;
 }

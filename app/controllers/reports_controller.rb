@@ -1,4 +1,4 @@
-class ReportsController < ApplicationController
+class ReportsController < AppController
 
   before_action :set_report, only: [:show, :edit, :update, :destroy]
   before_action :set_topic_if_exists, only: [:index, :new, :create]
