@@ -5,9 +5,9 @@ class TopicsController < AppController
   before_action :set_user_if_exists, only: [:index]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :authenticate_user_by_topic, only: [:edit, :update, :destroy]
+  before_action :q_params, only: [:index]
 
   def index
-    @q = q_params
     @topics = Topic.includes(:tags, :histories).search(@q).page(params[:page])
     if @user.present?
       @topics = @topics.where(user_id: @user.id)

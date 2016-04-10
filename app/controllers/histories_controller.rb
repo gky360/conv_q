@@ -1,9 +1,9 @@
 class HistoriesController < AppController
 
   before_action :set_user
+  before_action :q_params, only: [:index]
 
   def index
-    @q = q_params
     @histories = History.includes(:topic)
       .joins(:topic).merge(Topic.search(@q))
       .where(user_id: @user.id)

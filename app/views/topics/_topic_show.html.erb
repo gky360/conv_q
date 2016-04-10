@@ -1,8 +1,8 @@
 <dl class="topic dl-horizontal">
-  <dt><strong><%= Topic.human_attribute_name(:title) %>:</strong></dt>
-  <dd><div class="title"><%= topic.title %></div></dd>
   <dt><strong><%= Topic.human_attribute_name(:tags) %>:</strong></dt>
   <dd><div class="tags"><p><%= tags_to_label(topic) %></p></div></dd>
+  <dt><strong><%= Topic.human_attribute_name(:title) %>:</strong></dt>
+  <dd><div class="title"><%= topic.title %></div></dd>
   <dt><strong>Ratings:</strong></dt>
   <dd>
     <%= render partial: "topics/ratings", locals: { topic: topic, verbose: true } %>

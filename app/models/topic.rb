@@ -52,7 +52,7 @@ class Topic < ActiveRecord::Base
     q[:title].split(/[ ,]+/).each do |title|
       topics = topics.where("`title` LIKE ?", "%#{title}%")
     end
-    q[:tag_names].split(",").each do |tag_name|
+    q[:tag_names].to_s.split(",").each do |tag_name|
       tag = Tag.find_by(name: tag_name)
       next if tag.nil?
       topics = topics.where(id: tag.topic_ids)

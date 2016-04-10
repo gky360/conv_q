@@ -24,7 +24,7 @@ class AppController < ApplicationController
   end
 
   def q_params
-    params.permit(:title, :tag_names)
+    @q = params.permit(:title, :tag_names)
   end
 
   def set_user
