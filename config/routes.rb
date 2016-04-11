@@ -17,10 +17,13 @@ Rails.application.routes.draw do
   resources :reports, param: :report_id, only: [:index, :show, :edit, :update, :destroy]
 
   # API
-  namespace :api, { format: 'json' } do
+  namespace :api, defaults: { format: 'json' } do
     namespace :v1 do
       root to: 'root#index'
+
       mount_devise_token_auth_for 'User', at: 'auth'
+      resources :users, param: :account, only: [:show]
+
       resources :tags, only: [:index]
 
       resources :topics, only: [:index]

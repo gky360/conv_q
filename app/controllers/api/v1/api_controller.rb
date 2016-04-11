@@ -2,13 +2,26 @@ class Api::V1::ApiController < ApplicationController
   include DeviseTokenAuth::Concerns::SetUserByToken
 
   protect_from_forgery with: :exception
-  rescue_from ActionController::InvalidAuthenticityToken, with: :handle_invalid_csrf_token!
+  rescue_from ActionController::InvalidAuthenticityToken, with: :handle_invalid_xsrf_token!
 
   before_action :log_xsrf_token
   before_action :log_current_user
+  before_action :set_meta
 
 
   protected
+
+  def render_with_meta!(body_h = {})
+    logger.debug body_h
+    unless @status.is_a? Integer
+      @status = Rack::Utils::SYMBOL_TO_STATUS_CODE[@status]
+    end
+    data_h = {}
+    data_h[:status] = @status
+    data_h[:errors] = @errors if @errors.present?
+    data_h.merge!(body_h)
+    render json: data_h, status: @status
+  end
 
   def log_xsrf_token
     logger.debug "cookies['XSRF-TOKEN']: #{cookies['XSRF-TOKEN']}"
@@ -16,6 +29,11 @@ class Api::V1::ApiController < ApplicationController
 
   def log_current_user
     logger.debug "current_user: #{user_signed_in? ? current_user.email : ''}"
+  end
+
+  def set_meta
+    @status = :ok
+    @errors = []
   end
 
   def set_q_params
@@ -77,9 +95,14 @@ class Api::V1::ApiController < ApplicationController
 
   private
 
-  def handle_invalid_csrf_token!(e)
+  def handle_invalid_xsrf_token!(e)
     logger.error "#{e.class}: #{e.message}"
-    render json: { errors: ["invalid_auth_token"] }, status: :unauthorized
+    @status = :unauthorized
+    @errors << Hash[
+      reason: "invalid_xsrf_token",
+      message: "Please set a valid xsrf token."
+    ]
+    render_with_meta!
   end
 
 end

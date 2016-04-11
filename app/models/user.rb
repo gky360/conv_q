@@ -34,4 +34,11 @@ class User < ActiveRecord::Base
     default: 0b00000000
   ]
 
+  def histories_count
+    histories_count = {}
+    histories_count[:total] = histories.count
+    histories_count[:today] = histories.where('updated_at >= ?', Date.today).count
+    return histories_count
+  end
+
 end

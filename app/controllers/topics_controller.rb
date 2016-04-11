@@ -88,11 +88,7 @@ class TopicsController < AppController
   end
 
   def set_histories_count
-    @histories_count = {}
-    if user_signed_in?
-      @histories_count[:total] = current_user.histories.count
-      @histories_count[:today] = current_user.histories.where('updated_at >= ?', Date.today).count
-    end
+    @histories_count = user_signed_in? ? current_user.histories_count : {}
   end
 
 end
