@@ -8,7 +8,7 @@ app.controller("tagsCtrl", ["$scope", "Tag", function($scope, Tag) {
   ctrl.$onInit = function() {
     console.log("TagsCtrl#onInit");
     $scope.tags = Tag.query(
-      {},
+      { select: "id,name" },
       ctrl.set_tags
     );
   };

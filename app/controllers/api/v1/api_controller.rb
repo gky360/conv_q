@@ -12,7 +12,6 @@ class Api::V1::ApiController < ApplicationController
   protected
 
   def render_with_meta!(body_h = {})
-    logger.debug body_h
     unless @status.is_a? Integer
       @status = Rack::Utils::SYMBOL_TO_STATUS_CODE[@status]
     end
@@ -20,6 +19,7 @@ class Api::V1::ApiController < ApplicationController
     data_h[:status] = @status
     data_h[:errors] = @errors if @errors.present?
     data_h.merge!(body_h)
+    logger.debug data_h
     render json: data_h, status: @status
   end
 
