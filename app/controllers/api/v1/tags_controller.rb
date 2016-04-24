@@ -20,7 +20,7 @@ class Api::V1::TagsController < Api::V1::ApiController
         .limit(@limit)
         .select(@select)
         .order(@order)
-    render_with_meta!(tags: @tags)
+    render_with_meta(tags: @tags)
   end
 
 end

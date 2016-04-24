@@ -22,14 +22,14 @@ class Api::V1::TopicsController < Api::V1::ApiController
         .limit(@limit)
         .select(@select)
         .order(@order)
-    render_with_meta!(topics: @topics)
+    render_with_meta(topics: @topics)
   end
 
   def rand_for_user
     @topics = Topic.rand_for_user(current_user)
         .limit(@limit)
         .select(@select)
-    render_with_meta!(topics: @topics)
+    render_with_meta(topics: @topics)
   end
 
 end

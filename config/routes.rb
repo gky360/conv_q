@@ -28,7 +28,10 @@ Rails.application.routes.draw do
 
       resources :topics, only: [:index]
       get 'topics/rand_for_user' => 'topics#rand_for_user'
+
+      get  '*path', to: 'api#no_route_match'
     end
+
   end
 
 end
