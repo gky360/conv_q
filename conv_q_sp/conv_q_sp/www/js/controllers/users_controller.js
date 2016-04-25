@@ -11,7 +11,6 @@ app.controller("UsersController", [
     console.log("users#init");
     console.log("scope: " + $scope.current_user.email);
     console.log("app: " + app.current_user.email);
-    $scope.hoge = "hogehoge";
   };
   init();
 

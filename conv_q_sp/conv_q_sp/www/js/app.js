@@ -11,7 +11,7 @@ if (ENV === "development") {
 var app = angular.module("convQApp", [
   "onsen",
   "ngCookies",
-  // "ngResource",
+  "ngResource",
   "ng-token-auth"
 ]);
 

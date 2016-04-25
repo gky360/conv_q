@@ -135,6 +135,21 @@
       <lastModified>
       </lastModified>
     </Content>
+    <Content Include="www\components\angular-resource.js">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>bf1e55eb</hash>
+      <icon>
+      </icon>
+      <mime>text/javascript</mime>
+      <os>
+      </os>
+      <path>/www/components/angular-resource.js</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Content>
     <Content Include="www\components\loader.css">
       <type>file</type>
       <deletable>True</deletable>
@@ -871,7 +886,7 @@
     <Content Include="www\home.html">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>e88423b4</hash>
+      <hash>63e02885</hash>
       <icon>
       </icon>
       <mime>text/html</mime>
@@ -880,13 +895,12 @@
       <path>/www/home.html</path>
       <remark>
       </remark>
-      <lastModified>
-      </lastModified>
+      <lastModified>635972336663934066</lastModified>
     </Content>
     <Content Include="www\index.html">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>f6a15cda</hash>
+      <hash>6021bddd</hash>
       <icon>
       </icon>
       <mime>text/html</mime>
@@ -895,12 +909,12 @@
       <path>/www/index.html</path>
       <remark>
       </remark>
-      <lastModified>635942861966309213</lastModified>
+      <lastModified>635972336661750063</lastModified>
     </Content>
     <Content Include="www\js\app.js">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>aaf2ec41</hash>
+      <hash>2b3d61da</hash>
       <icon>
       </icon>
       <mime>text/javascript</mime>
@@ -909,7 +923,7 @@
       <path>/www/js/app.js</path>
       <remark>
       </remark>
-      <lastModified>635940993258627777</lastModified>
+      <lastModified>635972336659410058</lastModified>
     </Content>
     <Content Include="www\js\common.js">
       <type>file</type>
@@ -939,10 +953,24 @@
       </remark>
       <lastModified>635941155631021038</lastModified>
     </Content>
+    <Content Include="www\js\controllers\topics_controller.js">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>7428e8eb</hash>
+      <icon>
+      </icon>
+      <mime>text/javascript</mime>
+      <os>
+      </os>
+      <path>/www/js/controllers/topics_controller.js</path>
+      <remark>
+      </remark>
+      <lastModified>635972346318161874</lastModified>
+    </Content>
     <Content Include="www\js\controllers\users_controller.js">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>b00f03e4</hash>
+      <hash>b8a9bda5</hash>
       <icon>
       </icon>
       <mime>text/javascript</mime>
@@ -951,7 +979,22 @@
       <path>/www/js/controllers/users_controller.js</path>
       <remark>
       </remark>
-      <lastModified>635942861963739066</lastModified>
+      <lastModified>635972336655042051</lastModified>
+    </Content>
+    <Content Include="www\js\services\topic.js">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>e2a870e6</hash>
+      <icon>
+      </icon>
+      <mime>text/javascript</mime>
+      <os>
+      </os>
+      <path>/www/js/services/topic.js</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
     </Content>
     <Content Include="www\js\services\user.js">
       <type>file</type>
@@ -985,7 +1028,7 @@
     <Content Include="www\topics\index.html">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>2f3de3a5</hash>
+      <hash>d9575371</hash>
       <icon>
       </icon>
       <mime>text/html</mime>
@@ -994,8 +1037,7 @@
       <path>/www/topics/index.html</path>
       <remark>
       </remark>
-      <lastModified>
-      </lastModified>
+      <lastModified>635972336649738041</lastModified>
     </Content>
     <Content Include="www\users\account.html">
       <type>file</type>
