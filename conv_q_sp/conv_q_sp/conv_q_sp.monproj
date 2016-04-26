@@ -886,7 +886,7 @@
     <Content Include="www\home.html">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>63e02885</hash>
+      <hash>542272e2</hash>
       <icon>
       </icon>
       <mime>text/html</mime>
@@ -895,7 +895,7 @@
       <path>/www/home.html</path>
       <remark>
       </remark>
-      <lastModified>635972336663934066</lastModified>
+      <lastModified>635972927220539484</lastModified>
     </Content>
     <Content Include="www\index.html">
       <type>file</type>
@@ -914,7 +914,7 @@
     <Content Include="www\js\app.js">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>2b3d61da</hash>
+      <hash>ef71d01f</hash>
       <icon>
       </icon>
       <mime>text/javascript</mime>
@@ -923,7 +923,7 @@
       <path>/www/js/app.js</path>
       <remark>
       </remark>
-      <lastModified>635972336659410058</lastModified>
+      <lastModified>635972927310395642</lastModified>
     </Content>
     <Content Include="www\js\common.js">
       <type>file</type>
@@ -984,7 +984,7 @@
     <Content Include="www\js\services\topic.js">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>e2a870e6</hash>
+      <hash>ae2f77ed</hash>
       <icon>
       </icon>
       <mime>text/javascript</mime>
@@ -993,8 +993,7 @@
       <path>/www/js/services/topic.js</path>
       <remark>
       </remark>
-      <lastModified>
-      </lastModified>
+      <lastModified>635972927218199480</lastModified>
     </Content>
     <Content Include="www\js\services\user.js">
       <type>file</type>

@@ -1,6 +1,17 @@
 <ons-page ng-controller="TopicsController">
 
-  <h1>Home</h1>
+  <h1>Random Topic</h1>
+
+  <dl class="topic dl-horizontal">
+    <dt><strong>Tags:</strong></dt>
+    <dd><div class="tags"><p>{{ topic.tags }}</p></div></dd>
+    <dt><strong>Title:</strong></dt>
+    <dd><div class="title">{{ topic.title }}</div></dd>
+    <dt><strong>Ratings:</strong></dt>
+    <dd>
+      {{ topic.ratings }}
+    </dd>
+  </dl>
 
   <pre ng-init="rand_for_user()">{{topic | json}}</pre>
 

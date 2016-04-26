@@ -19,16 +19,21 @@ app.factory("Topic", ["$resource", function($resource) {
     return data.topic;
   }
 
-  var Topic = $resource(API_ROOT + "/topics", {}, {
-    query: {
-      isArray: true,
-      transformResponse: unwrap_topics_data
+  var Topic = $resource(
+    API_ROOT + "/topics",
+    {
+      embeds: "tags,ratings"
     },
-    rand_for_user: {
-      method: "GET",
-      url: API_ROOT + "/topics/rand_for_user",
-      isArray: true,
-      transformResponse: unwrap_topics_data
+    {
+      query: {
+        isArray: true,
+        transformResponse: unwrap_topics_data
+      },
+      rand_for_user: {
+        method: "GET",
+        url: API_ROOT + "/topics/rand_for_user",
+        isArray: true,
+        transformResponse: unwrap_topics_data
     }
   });
 
