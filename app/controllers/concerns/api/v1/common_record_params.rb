@@ -1,4 +1,4 @@
-module Api::V1::CommonRecordParamsSetter
+module Api::V1::CommonRecordParams
 
   def set_q_params
     @q = params.permit(:title, :tag_names)
@@ -54,6 +54,17 @@ module Api::V1::CommonRecordParamsSetter
       end
     end
     return @order
+  end
+
+  # [ params[:embeds] ] associations or methods you want to be embedded in the response data
+  # [permitted_embeds] array of syms of associations or methods you permit clients to access
+  def set_embeds_params_with_permit(permitted_embeds)
+    embeds_text = params[:embeds] || ""
+    permitted_embeds ||= []
+    @embeds = embeds_text.split(",")
+        .map{ |embed_text| embed_text.strip.to_sym }
+        .select{ |embed| permitted_embeds.include?(embed) }
+    return @embeds
   end
 
 end

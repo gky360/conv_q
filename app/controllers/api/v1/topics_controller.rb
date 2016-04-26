@@ -4,6 +4,9 @@ class Api::V1::TopicsController < Api::V1::ApiController
   PERMITTED_FIELDS = Array[
     :id, :title, :source_url, :created_at, :updated_at, :user_id
   ]
+  PERMITTED_EMBEDS = Array[
+    :tags, :ratings
+  ]
 
   before_action :set_q_params,
     only: [:index]
@@ -15,6 +18,7 @@ class Api::V1::TopicsController < Api::V1::ApiController
     only: [:index, :rand_for_user]
   before_action -> { set_order_params_with_permit(PERMITTED_FIELDS) },
     only: [:index]
+  before_action -> { set_embeds_params_with_permit(PERMITTED_EMBEDS) }
 
   def index
     @topics = Topic.search(@q)
@@ -22,14 +26,14 @@ class Api::V1::TopicsController < Api::V1::ApiController
         .limit(@limit)
         .select(@select)
         .order(@order)
-    render_with_meta(topics: @topics)
+    render_with_meta(topics: embed_in(@topics, @embeds))
   end
 
   def rand_for_user
     @topics = Topic.rand_for_user(current_user)
         .limit(@limit)
         .select(@select)
-    render_with_meta(topics: @topics)
+    render_with_meta(topics: embed_in(@topics, @embeds))
   end
 
 end

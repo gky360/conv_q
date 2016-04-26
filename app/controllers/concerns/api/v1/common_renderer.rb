@@ -24,6 +24,25 @@ module Api::V1::CommonRenderer
     render json: data_h, status: status
   end
 
+  # resources に embeds で指定された関連モデル等を埋め込む
+  # resources が単数の場合はハッシュ、複数の場合はハッシュの配列にして返す
+  def embed_in(resources, embeds)
+    if resources.is_a?(Topic::ActiveRecord_Relation) || resources.is_a?(Array)
+      return resources.map { |resource| embed_in_each(resource, embeds) }
+    else
+      return embed_in_each(resources, embeds)
+    end
+  end
+
+  # 単数の resource に、embeds で指定された関連モデル等を埋め込んで、ハッシュにして返す
+  def embed_in_each(resource, embeds)
+    resource_h = resource.attributes.symbolize_keys
+    embeds.each do |embed|
+      resource_h[embed] = resource.send(embed)
+    end
+    return resource_h
+  end
+
   # バリデーションエラーをまとめて、render_with_meta の errors に指定できる形にする
   def format_validation_errors(resource)
     full_messages = resource.errors.full_messages
