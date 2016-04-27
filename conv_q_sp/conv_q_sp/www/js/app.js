@@ -4,6 +4,7 @@ var ENV = "development";
 if (ENV === "development") {
   // API のルート URL
   var API_ROOT = "http://192.168.1.3:3000/api/v1";
+  // var API_ROOT = "http://172.20.10.4:3000/api/v1";
 } else if (ENV === "production") {
   var API_ROOT = "https://conv-q.herokuapp.com/api/v1";
 }

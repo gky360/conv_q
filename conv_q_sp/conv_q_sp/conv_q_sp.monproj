@@ -150,10 +150,25 @@
       <lastModified>
       </lastModified>
     </Content>
+    <Content Include="www\components\bootstrap.min.css">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>f538eb6e</hash>
+      <icon>
+      </icon>
+      <mime>text/css</mime>
+      <os>
+      </os>
+      <path>/www/components/bootstrap.min.css</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Content>
     <Content Include="www\components\loader.css">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>1804bb9b</hash>
+      <hash>8d1e913c</hash>
       <icon>
       </icon>
       <mime>text/css</mime>
@@ -162,13 +177,12 @@
       <path>/www/components/loader.css</path>
       <remark>
       </remark>
-      <lastModified>
-      </lastModified>
+      <lastModified>635974058813187544</lastModified>
     </Content>
     <Content Include="www\components\loader.js">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>13ae81e5</hash>
+      <hash>ec38ab3e</hash>
       <icon>
       </icon>
       <mime>text/javascript</mime>
@@ -177,7 +191,7 @@
       <path>/www/components/loader.js</path>
       <remark>
       </remark>
-      <lastModified>635940987560631870</lastModified>
+      <lastModified>635974058810847540</lastModified>
     </Content>
     <Content Include="www\components\monaca-cordova-loader\.bower.json">
       <type>file</type>
@@ -854,10 +868,25 @@
       <lastModified>
       </lastModified>
     </Content>
+    <Content Include="www\components\reset.css">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>1bbcfbba</hash>
+      <icon>
+      </icon>
+      <mime>text/css</mime>
+      <os>
+      </os>
+      <path>/www/components/reset.css</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Content>
     <Content Include="www\css\style.css">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>0021ac7d</hash>
+      <hash>627cfbc3</hash>
       <icon>
       </icon>
       <mime>text/css</mime>
@@ -866,7 +895,7 @@
       <path>/www/css/style.css</path>
       <remark>
       </remark>
-      <lastModified>635941138729784343</lastModified>
+      <lastModified>635974058800551522</lastModified>
     </Content>
     <Content Include="www\histories\index.html">
       <type>file</type>
@@ -886,7 +915,7 @@
     <Content Include="www\home.html">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>542272e2</hash>
+      <hash>b876f51d</hash>
       <icon>
       </icon>
       <mime>text/html</mime>
@@ -895,12 +924,12 @@
       <path>/www/home.html</path>
       <remark>
       </remark>
-      <lastModified>635972927220539484</lastModified>
+      <lastModified>635974058797431516</lastModified>
     </Content>
     <Content Include="www\index.html">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>6021bddd</hash>
+      <hash>c8c59cab</hash>
       <icon>
       </icon>
       <mime>text/html</mime>
@@ -909,12 +938,12 @@
       <path>/www/index.html</path>
       <remark>
       </remark>
-      <lastModified>635972336661750063</lastModified>
+      <lastModified>635974058795247513</lastModified>
     </Content>
     <Content Include="www\js\app.js">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>ef71d01f</hash>
+      <hash>cb87c521</hash>
       <icon>
       </icon>
       <mime>text/javascript</mime>
@@ -923,7 +952,7 @@
       <path>/www/js/app.js</path>
       <remark>
       </remark>
-      <lastModified>635972927310395642</lastModified>
+      <lastModified>635974062677594852</lastModified>
     </Content>
     <Content Include="www\js\common.js">
       <type>file</type>
@@ -1027,7 +1056,7 @@
     <Content Include="www\topics\index.html">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>d9575371</hash>
+      <hash>8165cb19</hash>
       <icon>
       </icon>
       <mime>text/html</mime>
@@ -1036,7 +1065,7 @@
       <path>/www/topics/index.html</path>
       <remark>
       </remark>
-      <lastModified>635972336649738041</lastModified>
+      <lastModified>635974058790879505</lastModified>
     </Content>
     <Content Include="www\users\account.html">
       <type>file</type>
@@ -1412,6 +1441,23 @@
       <os>
       </os>
       <path>/www/js</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Folder>
+    <Folder Include="www\js\assets">
+      <type>dir</type>
+      <deletable>True</deletable>
+      <hash>
+      </hash>
+      <icon>
+      </icon>
+      <mime>
+      </mime>
+      <os>
+      </os>
+      <path>/www/js/assets</path>
       <remark>
       </remark>
       <lastModified>
