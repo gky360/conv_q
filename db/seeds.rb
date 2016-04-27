@@ -1,6 +1,6 @@
 # users
 
-user = User.where(name: "Admin", account: "admin", email: "scarletrunner7000@gmail.com").first_or_initialize
+user = User.where(name: "Admin", account: "admin", email: "admin@gmail.com").first_or_initialize
 user.password = "hogehoge"
 user.save
 user.admin!
@@ -19,8 +19,6 @@ end
     10.times do
       detail += "report detail #{n}. "
     end
-    Report.where(topic_id: n, user_id: user_id, detail: detail).first_or_create
-    # TODO: reason flag
+    Report.where(topic_id: n, user_id: user_id).first_or_create(reason_flag: rand((1 << 31) - 1), detail: detail)
   end
 end
-Report.first.update(reason_flag: (1 << 31) - 1)

@@ -1,0 +1,23 @@
+<ons-page ng-controller="UsersController">
+
+  <ons-row class="center-form">
+    <ons-col width="10%"></ons-col>
+    <ons-col width="80%" align="center" class="text-center">
+      <form name="sign_in_form">
+        <h2>ログイン</h2>
+        <br />
+        <input type="email" class="text-input--underbar" placeholder="Email"
+          ng-model="sign_in_form.email" required>
+        <br /><br />
+        <input type="password" class="text-input--underbar" placeholder="Password"
+          ng-model="sign_in_form.password" required>
+        <br /><br />
+        <ons-button modifier="large" ng-click="sign_in()">
+          ログイン
+        </ons-button>
+      </form>
+    </ons-col>
+    <ons-col width="10%"></ons-col>
+  </ons-row>
+
+</ons-page>
