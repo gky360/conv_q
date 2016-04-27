@@ -5,7 +5,7 @@ class DeviseTokenAuthChangeUsers < ActiveRecord::Migration
     add_column :users, :tokens, :text
 
     User.find_each do |user|
-      user.update_columns(uid: user.email, tokens: "{}")
+      user.update_columns(uid: user.email)
     end
 
     add_index :users, [:uid, :provider], unique: true
