@@ -1477,9 +1477,6 @@ var leftZ=parseInt(window.getComputedStyle(left[0],"").zIndex,10),rightZ=parseIn
 /*** <End:monaca-onsenui LoadJs:"components/monaca-onsenui/js/onsenui_all.min.js"> ***/
 /*** <End:monaca-onsenui> ***/
 
-
-
-
 /*** <Start:monaca-jquery> ***/
 /*** <Start:monaca-jquery LoadJs:"components/monaca-jquery/jquery.js"> ***/
 /*!
@@ -10314,6 +10311,3 @@ if ( typeof window === "object" && typeof window.document === "object" ) {
 
 /*** <End:monaca-jquery LoadJs:"components/monaca-jquery/jquery.js"> ***/
 /*** <End:monaca-jquery> ***/
-
-
-

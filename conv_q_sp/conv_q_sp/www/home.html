@@ -1,5 +1,5 @@
 <ons-page ng-controller="TopicsController">
-<div class="container">
+<div class="container" ng-init="rand_for_user()">
 
   <h1>Random Topic</h1>
 
@@ -14,7 +14,13 @@
     </dd>
   </dl>
 
-  <pre ng-init="rand_for_user()">{{topic | json}}</pre>
+  <cq-timer></cq-timer>
+
+
+
+
+
+  <!-- <pre class="pre-scrollable">{{topic | json}}</pre> -->
 
 </div>
 </ons-page>

@@ -4,6 +4,11 @@ app.controller("RootController", [
     "$scope", "$http", "common", "User",
     function($scope, $http, common, User) {
 
+  console.log(
+    "\n\n========================================\n" +
+    "[" + new Date() + "]\n\n"
+  );
+
   ons.ready(function() {
     console.log("root#");
 

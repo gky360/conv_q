@@ -6,10 +6,6 @@
  * common
  ************************************************** */
 
-.text-center {
-  text-align: center;
-}
-
 .tabbar-main .tab-text {
   font-size: 15px;
 }
@@ -26,3 +22,58 @@
   padding: 10px 0;
   font-size: 18px;
 }
+
+.raito-fix {
+  position: relative;
+}
+.raito-fix:after {
+  padding-top: 100%;
+  display: block;
+  content: "";
+}
+.raito-fix > * {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+
+/* **************************************************
+ * timer
+ * ************************************************** */
+
+#cq-timer-body {
+  margin: 20px;
+}
+#cq-timer-canvas, #cq-timer-seconds-wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  //height: 100%;
+}
+#cq-timer-seconds {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 1em;
+  line-height: 1em;
+  text-align: center;
+  font-size: 64px;
+  color: #646262;
+}
+#cq-timer-seconds > span {
+  margin: -5px 0 0 5px;
+}
+// #cq-timer-done-like,
+// #cq-timer-done-dislike,
+// #cq-timer-done-submit {
+//   margin-left: 10px;
+//   margin-right: 10px;
+// }

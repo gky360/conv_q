@@ -89,3 +89,13 @@ app.config(function($authProvider) {
     }
   });
 });
+
+// 部分テンプレート読み込みディレクティブ
+app.directive('partialTemplate', function($http, $compile) {
+  return function(scope, element, attr) {
+    $http.get(attr.partialTemplate).success(function(response) {
+      element.html(response);
+      $compile(element.contents())(scope);
+    })
+  };
+});

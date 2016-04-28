@@ -105,52 +105,7 @@
       <lastModified>
       </lastModified>
     </Content>
-    <Content Include="www\components\angular-cookie.js">
-      <type>file</type>
-      <deletable>True</deletable>
-      <hash>5bd44cf0</hash>
-      <icon>
-      </icon>
-      <mime>text/javascript</mime>
-      <os>
-      </os>
-      <path>/www/components/angular-cookie.js</path>
-      <remark>
-      </remark>
-      <lastModified>
-      </lastModified>
-    </Content>
-    <Content Include="www\components\angular-cookies.js">
-      <type>file</type>
-      <deletable>True</deletable>
-      <hash>e1ca5b1b</hash>
-      <icon>
-      </icon>
-      <mime>text/javascript</mime>
-      <os>
-      </os>
-      <path>/www/components/angular-cookies.js</path>
-      <remark>
-      </remark>
-      <lastModified>
-      </lastModified>
-    </Content>
-    <Content Include="www\components\angular-resource.js">
-      <type>file</type>
-      <deletable>True</deletable>
-      <hash>bf1e55eb</hash>
-      <icon>
-      </icon>
-      <mime>text/javascript</mime>
-      <os>
-      </os>
-      <path>/www/components/angular-resource.js</path>
-      <remark>
-      </remark>
-      <lastModified>
-      </lastModified>
-    </Content>
-    <Content Include="www\components\bootstrap.min.css">
+    <Content Include="www\components\css\bootstrap.min.css">
       <type>file</type>
       <deletable>True</deletable>
       <hash>f538eb6e</hash>
@@ -159,7 +114,172 @@
       <mime>text/css</mime>
       <os>
       </os>
-      <path>/www/components/bootstrap.min.css</path>
+      <path>/www/components/css/bootstrap.min.css</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Content>
+    <Content Include="www\components\css\reset.css">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>1bbcfbba</hash>
+      <icon>
+      </icon>
+      <mime>text/css</mime>
+      <os>
+      </os>
+      <path>/www/components/css/reset.css</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Content>
+    <Content Include="www\components\fonts\glyphicons-halflings-regular.eot">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>9cb1c758</hash>
+      <icon>
+      </icon>
+      <mime>application/octet-stream</mime>
+      <os>
+      </os>
+      <path>/www/components/fonts/glyphicons-halflings-regular.eot</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Content>
+    <Content Include="www\components\fonts\glyphicons-halflings-regular.svg">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>c9c6ee7c</hash>
+      <icon>
+      </icon>
+      <mime>application/octet-stream</mime>
+      <os>
+      </os>
+      <path>/www/components/fonts/glyphicons-halflings-regular.svg</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Content>
+    <Content Include="www\components\fonts\glyphicons-halflings-regular.ttf">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>9c3c179a</hash>
+      <icon>
+      </icon>
+      <mime>application/octet-stream</mime>
+      <os>
+      </os>
+      <path>/www/components/fonts/glyphicons-halflings-regular.ttf</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Content>
+    <Content Include="www\components\fonts\glyphicons-halflings-regular.woff">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>f57b14ea</hash>
+      <icon>
+      </icon>
+      <mime>application/octet-stream</mime>
+      <os>
+      </os>
+      <path>/www/components/fonts/glyphicons-halflings-regular.woff</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Content>
+    <Content Include="www\components\fonts\glyphicons-halflings-regular.woff2">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>61c3e876</hash>
+      <icon>
+      </icon>
+      <mime>application/octet-stream</mime>
+      <os>
+      </os>
+      <path>/www/components/fonts/glyphicons-halflings-regular.woff2</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Content>
+    <Content Include="www\components\js\angular-cookie.js">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>5bd44cf0</hash>
+      <icon>
+      </icon>
+      <mime>text/javascript</mime>
+      <os>
+      </os>
+      <path>/www/components/js/angular-cookie.js</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Content>
+    <Content Include="www\components\js\angular-cookies.js">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>e1ca5b1b</hash>
+      <icon>
+      </icon>
+      <mime>text/javascript</mime>
+      <os>
+      </os>
+      <path>/www/components/js/angular-cookies.js</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Content>
+    <Content Include="www\components\js\angular-resource.js">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>bf1e55eb</hash>
+      <icon>
+      </icon>
+      <mime>text/javascript</mime>
+      <os>
+      </os>
+      <path>/www/components/js/angular-resource.js</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Content>
+    <Content Include="www\components\js\Chart.js">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>56b97d49</hash>
+      <icon>
+      </icon>
+      <mime>text/javascript</mime>
+      <os>
+      </os>
+      <path>/www/components/js/Chart.js</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Content>
+    <Content Include="www\components\js\ng-token-auth.js">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>94bb3ec7</hash>
+      <icon>
+      </icon>
+      <mime>text/javascript</mime>
+      <os>
+      </os>
+      <path>/www/components/js/ng-token-auth.js</path>
       <remark>
       </remark>
       <lastModified>
@@ -182,7 +302,7 @@
     <Content Include="www\components\loader.js">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>ec38ab3e</hash>
+      <hash>17948d53</hash>
       <icon>
       </icon>
       <mime>text/javascript</mime>
@@ -191,7 +311,7 @@
       <path>/www/components/loader.js</path>
       <remark>
       </remark>
-      <lastModified>635974058810847540</lastModified>
+      <lastModified>635975008173073602</lastModified>
     </Content>
     <Content Include="www\components\monaca-cordova-loader\.bower.json">
       <type>file</type>
@@ -853,40 +973,10 @@
       <lastModified>
       </lastModified>
     </Content>
-    <Content Include="www\components\ng-token-auth.js">
-      <type>file</type>
-      <deletable>True</deletable>
-      <hash>94bb3ec7</hash>
-      <icon>
-      </icon>
-      <mime>text/javascript</mime>
-      <os>
-      </os>
-      <path>/www/components/ng-token-auth.js</path>
-      <remark>
-      </remark>
-      <lastModified>
-      </lastModified>
-    </Content>
-    <Content Include="www\components\reset.css">
-      <type>file</type>
-      <deletable>True</deletable>
-      <hash>1bbcfbba</hash>
-      <icon>
-      </icon>
-      <mime>text/css</mime>
-      <os>
-      </os>
-      <path>/www/components/reset.css</path>
-      <remark>
-      </remark>
-      <lastModified>
-      </lastModified>
-    </Content>
     <Content Include="www\css\style.css">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>627cfbc3</hash>
+      <hash>c9eba774</hash>
       <icon>
       </icon>
       <mime>text/css</mime>
@@ -895,7 +985,7 @@
       <path>/www/css/style.css</path>
       <remark>
       </remark>
-      <lastModified>635974058800551522</lastModified>
+      <lastModified>635984535000573579</lastModified>
     </Content>
     <Content Include="www\histories\index.html">
       <type>file</type>
@@ -915,7 +1005,7 @@
     <Content Include="www\home.html">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>b876f51d</hash>
+      <hash>a2a2c278</hash>
       <icon>
       </icon>
       <mime>text/html</mime>
@@ -924,12 +1014,12 @@
       <path>/www/home.html</path>
       <remark>
       </remark>
-      <lastModified>635974058797431516</lastModified>
+      <lastModified>635984534998233575</lastModified>
     </Content>
     <Content Include="www\index.html">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>c8c59cab</hash>
+      <hash>e383ae55</hash>
       <icon>
       </icon>
       <mime>text/html</mime>
@@ -938,12 +1028,12 @@
       <path>/www/index.html</path>
       <remark>
       </remark>
-      <lastModified>635974058795247513</lastModified>
+      <lastModified>635975008161952966</lastModified>
     </Content>
     <Content Include="www\js\app.js">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>cb87c521</hash>
+      <hash>fe751dd1</hash>
       <icon>
       </icon>
       <mime>text/javascript</mime>
@@ -952,7 +1042,7 @@
       <path>/www/js/app.js</path>
       <remark>
       </remark>
-      <lastModified>635974062677594852</lastModified>
+      <lastModified>635984534995893571</lastModified>
     </Content>
     <Content Include="www\js\common.js">
       <type>file</type>
@@ -971,7 +1061,7 @@
     <Content Include="www\js\controllers\root_controller.js">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>717bcadd</hash>
+      <hash>ee323f7c</hash>
       <icon>
       </icon>
       <mime>text/javascript</mime>
@@ -980,12 +1070,12 @@
       <path>/www/js/controllers/root_controller.js</path>
       <remark>
       </remark>
-      <lastModified>635941155631021038</lastModified>
+      <lastModified>635975008157972738</lastModified>
     </Content>
     <Content Include="www\js\controllers\topics_controller.js">
       <type>file</type>
       <deletable>True</deletable>
-      <hash>7428e8eb</hash>
+      <hash>252d4244</hash>
       <icon>
       </icon>
       <mime>text/javascript</mime>
@@ -994,7 +1084,7 @@
       <path>/www/js/controllers/topics_controller.js</path>
       <remark>
       </remark>
-      <lastModified>635972346318161874</lastModified>
+      <lastModified>635984534992461565</lastModified>
     </Content>
     <Content Include="www\js\controllers\users_controller.js">
       <type>file</type>
@@ -1009,6 +1099,21 @@
       <remark>
       </remark>
       <lastModified>635972336655042051</lastModified>
+    </Content>
+    <Content Include="www\js\directives\cq_timer.js">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>269ab6e8</hash>
+      <icon>
+      </icon>
+      <mime>text/javascript</mime>
+      <os>
+      </os>
+      <path>/www/js/directives/cq_timer.js</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
     </Content>
     <Content Include="www\js\services\topic.js">
       <type>file</type>
@@ -1066,6 +1171,21 @@
       <remark>
       </remark>
       <lastModified>635974058790879505</lastModified>
+    </Content>
+    <Content Include="www\topics\_topic_timer.html">
+      <type>file</type>
+      <deletable>True</deletable>
+      <hash>6a204d1d</hash>
+      <icon>
+      </icon>
+      <mime>text/html</mime>
+      <os>
+      </os>
+      <path>/www/topics/_topic_timer.html</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
     </Content>
     <Content Include="www\users\account.html">
       <type>file</type>
@@ -1173,6 +1293,54 @@
       <os>
       </os>
       <path>/www/components</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Folder>
+    <Folder Include="www\components\css">
+      <type>dir</type>
+      <deletable>True</deletable>
+      <hash>
+      </hash>
+      <icon>component</icon>
+      <mime>
+      </mime>
+      <os>
+      </os>
+      <path>/www/components/css</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Folder>
+    <Folder Include="www\components\fonts">
+      <type>dir</type>
+      <deletable>True</deletable>
+      <hash>
+      </hash>
+      <icon>component</icon>
+      <mime>
+      </mime>
+      <os>
+      </os>
+      <path>/www/components/fonts</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Folder>
+    <Folder Include="www\components\js">
+      <type>dir</type>
+      <deletable>True</deletable>
+      <hash>
+      </hash>
+      <icon>component</icon>
+      <mime>
+      </mime>
+      <os>
+      </os>
+      <path>/www/components/js</path>
       <remark>
       </remark>
       <lastModified>
@@ -1446,23 +1614,6 @@
       <lastModified>
       </lastModified>
     </Folder>
-    <Folder Include="www\js\assets">
-      <type>dir</type>
-      <deletable>True</deletable>
-      <hash>
-      </hash>
-      <icon>
-      </icon>
-      <mime>
-      </mime>
-      <os>
-      </os>
-      <path>/www/js/assets</path>
-      <remark>
-      </remark>
-      <lastModified>
-      </lastModified>
-    </Folder>
     <Folder Include="www\js\controllers">
       <type>dir</type>
       <deletable>True</deletable>
@@ -1475,6 +1626,23 @@
       <os>
       </os>
       <path>/www/js/controllers</path>
+      <remark>
+      </remark>
+      <lastModified>
+      </lastModified>
+    </Folder>
+    <Folder Include="www\js\directives">
+      <type>dir</type>
+      <deletable>True</deletable>
+      <hash>
+      </hash>
+      <icon>
+      </icon>
+      <mime>
+      </mime>
+      <os>
+      </os>
+      <path>/www/js/directives</path>
       <remark>
       </remark>
       <lastModified>
