@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :topics do
     resources :reports, param: :report_id, only: [:index, :new, :create]
   end
-  post '/topics/:id' => 'topics#done_and_show', as: 'topic_with_done'
+  post 'topics/:id' => 'topics#done_and_show', as: 'topic_with_done'
 
   resources :reports, param: :report_id, only: [:index, :show, :edit, :update, :destroy]
 
@@ -31,7 +31,11 @@ Rails.application.routes.draw do
 
       get  '*path', to: 'api#no_route_match'
     end
+  end
 
+  # conv_q_sp デバッグ用
+  if Rails.env.development?
+    get 'www/*path(.:format)' => 'conv_q#sp'
   end
 
 end
