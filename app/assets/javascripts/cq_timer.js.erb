@@ -42,7 +42,9 @@ var CqTimer = function() {
     done_submit.prop("disabled", true);
   }
   this.seconds = $("#cq-timer-seconds");
-  this.chart = new Chart($("#cq-timer-canvas").get(0).getContext("2d")).Doughnut(this.data, this.options);
+  var ctx = $("#cq-timer-canvas").get(0).getContext("2d");
+  console.log(ctx);
+  this.chart = new Chart(ctx).Doughnut(this.data, this.options);
 };
 
 CqTimer.prototype.toggle_timer = function() {
