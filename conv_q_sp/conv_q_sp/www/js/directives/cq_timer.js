@@ -2,7 +2,7 @@
 
 app.directive("cqTimer", function() {
 
-  var CqTimer = function() {
+  var CqTimer = function(element) {
     console.log("CqTimer#");
 
     // 1 秒間に表示を更新する回数
@@ -46,6 +46,7 @@ app.directive("cqTimer", function() {
       done_submit.prop("disabled", true);
     }
     this.seconds = $("#cq-timer-seconds");
+    console.log($("#cq-timer-seconds").on);
     var ctx = $("#cq-timer-canvas")[0].getContext("2d");
     this.chart = new Chart(ctx).Doughnut(this.data, this.options);
   };
@@ -117,8 +118,8 @@ app.directive("cqTimer", function() {
       onTopicsListClick: "&",
       onSkipClick: "&"
     },
-    link: function postLink(scope, element, attrs){
-      var cq_timer = new CqTimer();
+    link: function postLink(scope, element, attrs) {
+      var cq_timer = new CqTimer(element);
     }
   };
 

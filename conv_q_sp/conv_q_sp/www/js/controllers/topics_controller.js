@@ -14,15 +14,14 @@ app.controller("TopicsController", [
 
   $scope.init_cq_timer = function() {
     console.log("topics#init_cq_timer");
-    ons.ready(function() {
-      var d_cq_timer = $("#cq-timer");
-      if (d_cq_timer[0] != null) {
-        var cq_timer = new CqTimer();
-        $("#cq-timer-body").on("click", function() {
-          cq_timer.toggle_timer();
-        });
-      }
-    });
+    // ons.ready(function() {
+    //   if (d_cq_timer[0] != null) {
+    //     var cq_timer = new CqTimer();
+    //     $("#cq-timer-body").on("click", function() {
+    //       cq_timer.toggle_timer();
+    //     });
+    //   }
+    // });
   }
 
   $scope.index = function() {

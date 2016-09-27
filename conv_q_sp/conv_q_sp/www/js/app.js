@@ -14,8 +14,12 @@ if (ENV === "development") {
 
 // localbrowser 環境で monaca console の挙動を上書き
 if (ENV === "localbrowser") {
-  monaca.console.sendLog = function(level, url, line, char, arg) {
-    _console[level](arg[0]);
+  monaca.console.sendLog = function(level, url, line, char, args) {
+    if (args.length === 1) {
+      _console[level](args[0]);
+    } else {
+      _console[level](args);
+    }
   }
 }
 
@@ -98,14 +102,4 @@ app.config(function($authProvider) {
       return response;
     }
   });
-});
-
-// 部分テンプレート読み込みディレクティブ
-app.directive('partialTemplate', function($http, $compile) {
-  return function(scope, element, attr) {
-    $http.get(attr.partialTemplate).success(function(response) {
-      element.html(response);
-      $compile(element.contents())(scope);
-    })
-  };
 });
