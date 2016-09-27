@@ -1,9 +1,7 @@
 {
-  "name": "dsl-generated dependencies",
+  "name": "dsl-generated-dependencies",
   "dependencies": {
     "angular": "latest",
-    "angular-resource": "latest",
-    "typeahead.js": "latest",
-    "bootstrap-tagsinput": "latest"
+    "angular-resource": "latest"
   }
 }
