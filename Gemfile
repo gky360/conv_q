@@ -66,9 +66,13 @@ gem 'google-analytics-rails'
 gem 'mechanize'
 
 # bootstrap
-gem 'execjs'
-gem 'less-rails'
-gem "twitter-bootstrap-rails"
+# gem 'execjs'
+# gem 'less-rails'
+# gem "twitter-bootstrap-rails"
+
+# materialize
+gem 'materialize-sass'
+gem 'material_icons'
 
 # paging
 gem 'kaminari'
@@ -78,7 +82,7 @@ gem 'chart-js-rails', '0.0.9'
 
 # user
 gem 'devise'
-gem 'devise-bootstrap-views'
+# gem 'devise-bootstrap-views'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 

@@ -1,0 +1,18 @@
+<li><a href="/"><img src="/images/conv_q.svg" alt="ConvQ" class="conv_q_image"></a></li>
+<li><%= link_to "Topics", topics_path, class: "grey-text text-darken-2" %></li>
+<% if user_signed_in? %>
+<li>
+  <%= link_to "@#{current_user.account}", user_path(current_user.account), class: "grey-text text-darken-2" %>
+</li>
+<li>
+  <%= link_to destroy_user_session_path, method: :delete, class: "grey-text text-darken-2" do %>
+  <i class="material-icons left">perm_identity</i> Sign Out
+  <% end %>
+</li>
+<% else %>
+<li>
+  <%= link_to new_user_session_path, class: "grey-text text-darken-2" do %>
+  <i class="material-icons left">perm_identity</i> Sign In
+  <% end %>
+</li>
+<% end %>

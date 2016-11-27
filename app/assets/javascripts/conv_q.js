@@ -24,4 +24,15 @@ $(function() {
     window.location = $(this).data('href');
   });
 
+  // materialize
+  $(".button-collapse").sideNav();
+  window.dismissCard = function (selector){
+    $(selector).addClass("dismiss");
+  };
+  $(".card").on("transitionend", function(e){
+    if (e.currentTarget.className.indexOf("dismiss") >=0){
+      $(this).remove();
+    }
+  });
+
 });

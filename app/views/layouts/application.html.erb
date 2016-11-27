@@ -54,71 +54,55 @@
   </head>
   <body>
 
-    <div class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/"><img src="/images/icon.svg" alt="ConvQ"></a>
-        <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="/"><img src="/images/conv_q.svg" alt="ConvQ" class="conv_q"></a></li>
-            <li><%= link_to "Topics", topics_path %></li>
-            <% if user_signed_in? %>
-            <li>
-              <%= link_to "@#{current_user.account}", user_path(current_user.account) %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-              <span class="glyphicon glyphicon-user"></span> Sign Out
-              <% end %>
-            </li>
-            <% else %>
-            <li>
-              <%= link_to new_user_session_path do %>
-              <span class="glyphicon glyphicon-user"></span> Sign In
-              <% end %>
-            </li>
-            <% end %>
-          </ul>
-        </div>
+    <header>
+      <div class="navbar-fixed">
+        <nav class="grey lighten-4">
+          <div class="nav-wrapper">
+            <a href="/" class="brand-logo"><img src="/images/icon.svg" alt="ConvQ"></a>
+            <a href="#" data-activates="mobile-nav" class="button-collapse grey-text text-darken-2"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+              <%= render "layouts/menu" %>
+            </ul>
+            <ul class="side-nav" id="mobile-nav">
+              <%= render "layouts/menu" %>
+            </ul>
+          </div>
+        </nav>
       </div>
-    </div>
+    </header>
 
-    <div class="container" ng-app="app">
-      <div class="row" ng-controller="convQCtrl">
-        <div class="col-lg-10 col-lg-offset-1">
-          <%= bootstrap_flash %>
-          <%= yield %>
+    <main>
+      <div class="container" ng-app="app">
+        <div class="row" ng-controller="convQCtrl">
+          <div class="col-lg-10 col-lg-offset-1">
+            <%= render "layouts/flash" %>
+            <%= yield %>
 
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-          <!-- ConvQ -->
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-6500811608367981"
-               data-ad-slot="4083567954"
-               data-ad-format="auto"></ins>
-          <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- ConvQ -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-6500811608367981"
+                 data-ad-slot="4083567954"
+                 data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
+        </div><!--/row-->
+      </div> <!-- /container -->
+    </main>
+
+    <footer class="page-footer">
+      <div class="footer-copyright">
+        <div class="container center-align">
+            &copy; ConvQ 2016
         </div>
-      </div><!--/row-->
-
-    </div> <!-- /container -->
-
-    <footer class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-text footer-text text-center">
-          <small>&copy; ConvQ 2016</small>
-        </div>
+        <% if @debug %>
+        <%= debug @debug %>
+        <% end %>
+        <%= yield :debug %>
       </div>
-
-      <% if @debug %>
-      <%= debug @debug %>
-      <% end %>
-      <%= yield :debug %>
     </footer>
 
   </body>
