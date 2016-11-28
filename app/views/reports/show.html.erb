@@ -23,13 +23,13 @@
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
-              reports_path, :class => 'btn btn-default'  %>
+              reports_path, :class => 'waves-effect waves-light btn'  %>
 <% if @report.by_user?(current_user) %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_report_path(@report), :class => 'btn btn-default' %>
+              edit_report_path(@report), :class => 'waves-effect waves-light btn' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               report_path(@report),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+              :class => 'waves-effect waves-light btn red lighten-1' %>
 <% end %>

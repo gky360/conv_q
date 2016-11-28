@@ -24,7 +24,7 @@
 <% if user_signed_in? && @user.id === current_user.id %>
 <div>
   <p>
-    <%= link_to edit_user_registration_path, class: "btn btn-default" do %>
+    <%= link_to edit_user_registration_path, class: "waves-effect waves-light btn" do %>
     <span class="glyphicon glyphicon-cog"></span> Settings
     <% end %>
   </p>
@@ -33,9 +33,9 @@
 
 <div>
   <p>
-    <%= link_to "Histories", user_histories_path(@user.account), class: "btn btn-primary" %>
-    <%= link_to "Topics", user_topics_path(@user.account), class: "btn btn-primary" %>
-    <%= link_to user_reports_path(@user.account), class: "btn btn-link" do %>
+    <%= link_to "Histories", user_histories_path(@user.account), class: "waves-effect waves-light btn light-green lighten-1" %>
+    <%= link_to "Topics", user_topics_path(@user.account), class: "waves-effect waves-light btn light-green lighten-1" %>
+    <%= link_to user_reports_path(@user.account), class: "waves-effect waves-light btn-flat grey-text text-darken-2" do %>
       <span class="glyphicon glyphicon-flag"></span> Reports
     <% end %>
   </p>
