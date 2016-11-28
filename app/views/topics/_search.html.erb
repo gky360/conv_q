@@ -6,19 +6,19 @@
   <div class="panel-body">
     <%= form_tag(request.path_info, method: :get, role: "form", class: "form-horizontal") do |f| %>
       <div class="form-group">
-        <%= label_tag :title, "Title", class: "control-label col-sm-3" %>
-        <div class="col-sm-9">
+        <%= label_tag :title, "Title", class: "control-label col m-3" %>
+        <div class="col m-9">
           <%= text_field_tag :title, q[:title], autofocus: true, class: "form-control" %>
         </div>
       </div>
       <div class="form-group" ng-controller="tagsCtrl">
-        <%= label_tag :tag_names, "Tags", class: "control-label col-sm-3" %>
-        <div class="col-sm-9">
+        <%= label_tag :tag_names, "Tags", class: "control-label col m-3" %>
+        <div class="col m-9">
           <%= text_field_tag :tag_names, q[:tag_names], class: "form-control", data: { role: "tagsinput" } %>
         </div>
       </div>
       <div class="form-group">
-        <div class="col-sm-offset-3 col-sm-9">
+        <div class="col offset-m3 m9">
           <%= submit_tag "Search", class: "btn btn-primary" %>
           <%= link_to "Clear", request.path_info, class: "btn btn-default" %>
         </div>

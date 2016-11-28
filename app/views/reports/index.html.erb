@@ -11,11 +11,11 @@
   <thead class="row">
     <tr>
       <th>
-        <div class="col-sm-4 col-xs-12">Topic title</div>
-        <div class="col-sm-2 col-xs-12"><%= model_class.human_attribute_name(:user_id) %></div>
-        <div class="col-sm-4 col-xs-12">Reasons</div>
-        <div class="col-sm-1 col-xs-12"><%= model_class.human_attribute_name(:updated_at) %></div>
-        <div class="col-sm-1 col-xs-12"><%=t '.actions', :default => t("helpers.actions") %></div>
+        <div class="col m4 s12">Topic title</div>
+        <div class="col m2 s12"><%= model_class.human_attribute_name(:user_id) %></div>
+        <div class="col m4 s12">Reasons</div>
+        <div class="col m1 s12"><%= model_class.human_attribute_name(:updated_at) %></div>
+        <div class="col m1 s12"><%=t '.actions', :default => t("helpers.actions") %></div>
       </th>
     </tr>
   </thead>
@@ -23,11 +23,11 @@
     <% @reports.each do |report| %>
       <tr data-href="<%= report_path(report) %>">
         <td>
-          <div class="col-sm-4 col-xs-12"><%= title_with_icon(report.topic) %></div>
-          <div class="col-sm-2 col-xs-12"><%= user_to_link(report.user) %></div>
-          <div class="col-sm-4 col-xs-12"><%= reasons_to_ul(report, false) %></div>
-          <div class="col-sm-1 col-xs-12"><p><%= report.updated_at.in_time_zone(user_time_zone).strftime("%b %d %Y %H:%M") %></p></div>
-          <div class="actions col-sm-1 col-xs-12">
+          <div class="col m4 s12"><%= title_with_icon(report.topic) %></div>
+          <div class="col m2 s12"><%= user_to_link(report.user) %></div>
+          <div class="col m4 s12"><%= reasons_to_ul(report, false) %></div>
+          <div class="col m1 s12"><p><%= report.updated_at.in_time_zone(user_time_zone).strftime("%b %d %Y %H:%M") %></p></div>
+          <div class="actions col m1 s12">
             <% if report.by_user?(current_user) %>
             <p>
               <%= link_to t('.edit', :default => t("helpers.links.edit")),

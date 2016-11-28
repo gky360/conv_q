@@ -1,5 +1,5 @@
 <div id="cq-timer" class="row">
-  <div class="raito-fix col-sm-4 col-sm-offset-4">
+  <div class="raito-fix col offset-m4 m4">
     <div id="cq-timer-body">
       <canvas id="cq-timer-canvas"></canvas>
       <div id="cq-timer-seconds-wrap">
@@ -9,7 +9,7 @@
       </div>
     </div>
   </div>
-  <div id="cq-timer-buttons" class="col-sm-4 col-sm-offset-4">
+  <div id="cq-timer-buttons" class="col offset-m4 m4">
     <%= form_tag topic_with_done_path(next_topic), method: :post do %>
       <%= hidden_field_tag "done_topic_id", topic.id %>
       <div class="text-center">
