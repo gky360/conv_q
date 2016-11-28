@@ -24,7 +24,7 @@ module TopicsHelper
     reports_count = topic.reports.count
     reports_count_text = (reports_count === 0) ? "" : reports_count.to_s
     text_color = (reports_count === 0) ? "text-muted" : "text-danger"
-    content_tag :div, class: "pull-right" do
+    content_tag :div, class: "right" do
       link_to topic_reports_path(topic), class: text_color do |variable|
         content_tag(:i, "report_problem", class: "material-icons") + content_tag(:span, reports_count_text, class: "reports_count")
       end
