@@ -3,7 +3,7 @@
     <%= content_tag :a, page, remote: remote, rel: (page.next? ? 'next' : (page.prev? ? 'prev' : nil)) %>
   </li>
 <% else %>
-  <li>
+  <li class='waves-effect'>
     <%= link_to page, url, remote: remote, rel: (page.next? ? 'next' : (page.prev? ? 'prev' : nil)) %>
   </li>
 <% end %>
