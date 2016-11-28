@@ -10,10 +10,9 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require bootstrap_and_overrides
- *= require devise_bootstrap_views
  *= require jquery.tagit
  *= require tagit.ui-zendesk
+ *= require material_icons
  *= require_tree .
  *= require_self
  */
@@ -59,13 +58,17 @@
  * layout
  * ************************************************** */
 
-.navbar-brand > img {
-  margin: -0.5em;
-  height: 2em;
+.brand-logo > img {
+  margin: 8px;
+  height: 48px;
 }
 
-.navbar .conv_q {
+.conv_q_image {
   height: 1em;
+}
+
+#sidenav-overlay {
+  z-index: 996;
 }
 
 .jumbotron .logo > img {
@@ -81,12 +84,8 @@
   font-size: 21px;
 }
 .topic .tags {
-  font-size: 16px;
 }
 .topic-tag.label {
-  display: inline-block;
-  margin-right: 5px;
-  white-space: normal;
 }
 .topic-table > thead > tr > th,
 .topic-table > tbody > tr > th,
@@ -94,10 +93,6 @@
 .topic-table > tbody > tr > td {
   padding-left: 0px;
   padding-right: 0px;
-}
-.ratings {
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
 .reports_count {
   margin-left: 0.5em;
@@ -153,17 +148,15 @@
   height: 1em;
   line-height: 1em;
   text-align: center;
-  font-size: 64px;
+  font-size: 72px;
   color: #646262;
 }
-#cq-timer-seconds > span {
-  margin: -5px 0 0 5px;
+#cq-timer-seconds > i {
+  font-size: 72px;
 }
 #cq-timer-done-like,
 #cq-timer-done-dislike,
 #cq-timer-done-submit {
-  margin-left: 10px;
-  margin-right: 10px;
 }
 
 
@@ -171,10 +164,4 @@
  * footer
  * ************************************************** */
 
-footer {
-  margin-top: 20px;
-}
 
-.footer-text {
-  width: 100%;
-}

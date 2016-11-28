@@ -1,12 +1,12 @@
 <tr data-href="<%= topic_path(topic) %>">
   <td>
-    <div class="col-sm-6 col-xs-12">
+    <div class="col m6 s12">
       <p><%= title_with_icon(topic) %></p>
     </div>
-    <div class="col-sm-2 col-xs-12"><%= tags_to_label(topic) %></div>
-    <div class="col-sm-2 col-xs-12">
+    <div class="col m2 s12"><%= tags_to_label(topic) %></div>
+    <div class="col m2 s12">
       <%= render partial: "topics/ratings", locals: { topic: topic, verbose: true } %>
     </div>
-    <div class="col-sm-2 col-xs-12"><p><%= topic.created_at.in_time_zone(user_time_zone).strftime("%b %d %Y %H:%M") %></p></div>
+    <div class="col m2 s12"><p><%= topic.created_at.in_time_zone(user_time_zone).strftime("%b %d %Y %H:%M") %></p></div>
   </td>
 </tr>

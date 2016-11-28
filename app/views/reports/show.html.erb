@@ -4,18 +4,18 @@
 </div>
 
 <dl class="report row">
-  <dt class="col-xs-12"><h4><%= model_class.human_attribute_name(:topic_id) %>:</h4></dt>
-  <dd class="col-sm-12">
+  <dt class="col s12"><h4><%= model_class.human_attribute_name(:topic_id) %>:</h4></dt>
+  <dd class="col m12">
     <%= render partial: "topics/topic_show", locals: { topic: @report.topic } %>
   </dd>
-  <dt class="col-xs-12"><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
-  <dd class="col-sm-offset-1 col-sm-11"><%= user_to_link(@report.user) %></dd>
-  <dt class="col-xs-12"><strong>Reasons:</strong></dt>
-  <dd class="col-sm-offset-1 col-sm-11">
+  <dt class="col s12"><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd class="col offset-m1 m11"><%= user_to_link(@report.user) %></dd>
+  <dt class="col s12"><strong>Reasons:</strong></dt>
+  <dd class="col offset-m1 m11">
     <%= reasons_to_ul(@report, true) %>
   </dd>
-  <dt class="col-xs-12"><strong><%= model_class.human_attribute_name(:detail) %>:</strong></dt>
-  <dd class="col-sm-offset-1 col-sm-11">
+  <dt class="col s12"><strong><%= model_class.human_attribute_name(:detail) %>:</strong></dt>
+  <dd class="col offset-m1 m11">
     <% if @report.detail.present? %>
     <blockquote class="detail"><%= simple_format(h(@report.detail)) %></blockquote>
     <% end %>
@@ -23,13 +23,13 @@
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
-              reports_path, :class => 'btn btn-default'  %>
+              reports_path, :class => 'waves-effect waves-light btn'  %>
 <% if @report.by_user?(current_user) %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_report_path(@report), :class => 'btn btn-default' %>
+              edit_report_path(@report), :class => 'waves-effect waves-light btn' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               report_path(@report),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+              :class => 'waves-effect waves-light btn red lighten-1' %>
 <% end %>

@@ -65,10 +65,9 @@ gem 'google-analytics-rails'
 # scraping
 gem 'mechanize'
 
-# bootstrap
-gem 'execjs'
-gem 'less-rails'
-gem "twitter-bootstrap-rails"
+# materialize
+gem 'materialize-sass'
+gem 'material_icons'
 
 # paging
 gem 'kaminari'
@@ -78,7 +77,6 @@ gem 'chart-js-rails', '0.0.9'
 
 # user
 gem 'devise'
-gem 'devise-bootstrap-views'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 
@@ -87,7 +85,6 @@ gem 'bower-rails'
 
 # others
 gem 'jquery-ui-rails'
-gem 'jquery-turbolinks'
 
 # monaca スマホアプリ API
 gem 'angular_rails_csrf'

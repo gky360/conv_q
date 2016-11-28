@@ -7,6 +7,7 @@ app.controller("tagsCtrl", ["$scope", "Tag", function($scope, Tag) {
 
   ctrl.$onInit = function() {
     console.log("TagsCtrl#onInit");
+
     $scope.tags = Tag.query(
       {},
       ctrl.set_tags
@@ -16,16 +17,14 @@ app.controller("tagsCtrl", ["$scope", "Tag", function($scope, Tag) {
   ctrl.set_tags = function() {
     console.log("TagsCtrl#set_tags");
 
-    $(function() {
-      var source_tags = $scope.tags.map(function(tag) {
-        return tag.name
-      });
-      $("#tag_names").tagit({
-        autocomplete: {
-          delay: 0,
-          source: source_tags
-        }
-      });
+    var source_tags = $scope.tags.map(function(tag) {
+      return tag.name
+    });
+    $("#tag_names").tagit({
+      autocomplete: {
+        delay: 0,
+        source: source_tags
+      }
     });
   };
 }]);

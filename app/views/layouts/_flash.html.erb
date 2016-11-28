@@ -1,0 +1,19 @@
+<div class="col s12">
+  <% if notice %>
+    <div id="flash-notice" class="card green lighten-1">
+      <div class="card-content white-text">
+        <%= notice.html_safe %>
+        <a onclick="dismissCard('#flash-notice')" class="white-text" href="#!"><i class="close material-icons right">close</i></a>
+      </div>
+    </div>
+  <% end %>
+  <% if alert %>
+    <div id="flash-alert" class="card red lighten-1">
+      <div class="card-content white-text">
+        <%= alert.html_safe %>
+        <a onclick="dismissCard('#flash-alert')" class="white-text" href="#!"><i class="close material-icons right">close</i></a>
+      </div>
+    </div>
+  <% end %>
+</div>
+

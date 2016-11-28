@@ -11,13 +11,12 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery-ui
+//= require materialize
 //= require turbolinks
 //= require tag-it
 //= require js.cookie
-//= require twitter/bootstrap
 //= require Chart
 //= require angular/angular
 //= require angular-resource/angular-resource

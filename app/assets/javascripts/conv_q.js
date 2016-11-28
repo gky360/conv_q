@@ -1,6 +1,6 @@
 "use strict";
 
-$(function() {
+$(document).on('turbolinks:load', function() {
 
   var d_cq_timer = $("#cq-timer");
   if (d_cq_timer[0] != null) {
@@ -22,6 +22,17 @@ $(function() {
   });
   $('tr[data-href]').addClass('clickable').click(function(e) {
     window.location = $(this).data('href');
+  });
+
+  // materialize
+  $(".button-collapse").sideNav();
+  window.dismissCard = function (selector){
+    $(selector).addClass("dismiss");
+  };
+  $(".card").on("transitionend", function(e){
+    if (e.currentTarget.className.indexOf("dismiss") >=0){
+      $(this).remove();
+    }
   });
 
 });

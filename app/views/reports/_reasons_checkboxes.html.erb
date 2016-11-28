@@ -1,8 +1,6 @@
 <% Report::REASONS.each do |reason_value, reason_text| %>
-<div class="checkbox">
-  <label>
-    <%= check_box_tag "reasons[#{reason_value}]", true, report.reasons[reason_value].present? %>
-    <%= label_tag "reasons[#{reason_value}]", reason_text %>
-  </label>
-</div>
+<p>
+  <%= check_box_tag "reasons[#{reason_value}]", true, report.reasons[reason_value].present? %>
+  <%= label_tag "reasons[#{reason_value}]", reason_text %>
+</p>
 <% end %>

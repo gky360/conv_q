@@ -9,12 +9,12 @@
   </h1>
 </div>
 
-<% panel_title = "Search #{@user.name}'s Topics" if @user.present? %>
-<%= render partial: "topics/search", locals: { q: @q, panel_title: panel_title } %>
+<% card_title = "Search #{@user.name}'s Topics" if @user.present? %>
+<%= render partial: "topics/search", locals: { q: @q, card_title: card_title } %>
 
 <div>
   <p>
-    <%= link_to "New Topic", new_topic_path, class: 'btn btn-primary' %>
+    <%= link_to "New Topic", new_topic_path, class: 'waves-effect waves-light btn light-green lighten-1' %>
   </p>
 </div>
 
@@ -29,8 +29,8 @@
 <% if @user.present? %>
 <div>
   <p>
-    <%= link_to user_path(@user.account), class: "btn btn-default" do %>
-      <span class="glyphicon glyphicon-chevron-left"></span> @<%= @user.account %>
+    <%= link_to user_path(@user.account), class: "waves-effect waves-light btn" do %>
+      @<%= @user.account %>
     <% end %>
   </p>
 </div>
