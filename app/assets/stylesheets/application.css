@@ -148,12 +148,11 @@
   height: 1em;
   line-height: 1em;
   text-align: center;
-  font-size: 64px;
+  font-size: 72px;
   color: #646262;
 }
 #cq-timer-seconds > i {
-  /*margin: -5px 0 0 5px;*/
-  font-size: 64px;
+  font-size: 72px;
 }
 #cq-timer-done-like,
 #cq-timer-done-dislike,
