@@ -1,21 +1,23 @@
 <% if !user_signed_in? %>
-<div class="jumbotron">
-  <div class="row">
-    <div class="col m4">
-      <div class="logo">
-        <img src="/images/logo.svg" alt="logo">
+<div class="jumbotron card grey lighten-4">
+  <div class="card-content">
+    <div class="row">
+      <div class="col m4">
+        <div class="logo">
+          <img src="/images/logo.svg" alt="logo">
+        </div>
       </div>
-    </div>
-    <div class="col m8">
-      <h2>Find, get, post conversation questions on ConvQ.</h2>
-      <p>Conversation questions on this website will help you make progress in English speaking.</p>
-      <ul>
-        <li><p><span class="cq-brown h3">Prepare</span> for speaking for <span class="cq-brown h3">15</span> seconds.</p></li>
-        <li><p><span class="cq-green h3">Speak</span> about your ideas on topics for <span class="cq-green h3">45</span> seconds.</p></li>
-      </ul>
-      <div class="pull-right">
-        <%= link_to "Sign In", new_user_session_path, class: "btn btn-default btn-lg" %>
-        <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success btn-lg" %>
+      <div class="col m8">
+        <h2>Find, get, post conversation questions on ConvQ.</h2>
+        <p class="flow-text">Conversation questions on this website will help you make progress in English speaking.</p>
+        <ul>
+          <li><p class="flow-text"><span class="cq-brown h3">Prepare</span> for speaking for <span class="cq-brown h3">15</span> seconds.</p></li>
+          <li><p class="flow-text"><span class="cq-green h3">Speak</span> about your ideas on topics for <span class="cq-green h3">45</span> seconds.</p></li>
+        </ul>
+        <div class="pull-right">
+          <%= link_to "Sign In", new_user_session_path, class: "btn btn-default btn-lg" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success btn-lg" %>
+        </div>
       </div>
     </div>
   </div>
