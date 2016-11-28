@@ -84,12 +84,8 @@
   font-size: 21px;
 }
 .topic .tags {
-  font-size: 16px;
 }
 .topic-tag.label {
-  display: inline-block;
-  margin-right: 5px;
-  white-space: normal;
 }
 .topic-table > thead > tr > th,
 .topic-table > tbody > tr > th,
