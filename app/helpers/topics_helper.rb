@@ -2,7 +2,7 @@ module TopicsHelper
 
   def title_with_icon(topic)
     html = topic.title
-    html += link_to(content_tag(:span, "", class: "glyphicon glyphicon-play topic-title-link"), topic)
+    html += link_to(content_tag(:i, "play_arrow", class: "material-icons topic-title-link"), topic)
     return raw html
   end
 
@@ -26,7 +26,7 @@ module TopicsHelper
     text_color = (reports_count === 0) ? "text-muted" : "text-danger"
     content_tag :div, class: "pull-right" do
       link_to topic_reports_path(topic), class: text_color do |variable|
-        content_tag(:span, "", class: "glyphicon glyphicon-flag") + content_tag(:span, reports_count_text, class: "reports_count")
+        content_tag(:i, "report_problem", class: "material-icons") + content_tag(:span, reports_count_text, class: "reports_count")
       end
     end
   end

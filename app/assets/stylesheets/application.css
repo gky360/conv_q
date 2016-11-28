@@ -67,6 +67,10 @@
   height: 1em;
 }
 
+#sidenav-overlay {
+  z-index: 996;
+}
+
 .jumbotron .logo > img {
   width: 100%;
   padding: 10px;
@@ -151,8 +155,9 @@
   font-size: 64px;
   color: #646262;
 }
-#cq-timer-seconds > span {
-  margin: -5px 0 0 5px;
+#cq-timer-seconds > i {
+  /*margin: -5px 0 0 5px;*/
+  font-size: 64px;
 }
 #cq-timer-done-like,
 #cq-timer-done-dislike,

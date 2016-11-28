@@ -1,30 +1,30 @@
 <div id="cq-timer" class="row">
-  <div class="raito-fix col offset-m4 m4">
+  <div class="raito-fix col offset-m4 m4 s12">
     <div id="cq-timer-body">
       <canvas id="cq-timer-canvas"></canvas>
       <div id="cq-timer-seconds-wrap">
         <div id="cq-timer-seconds">
-          <span class="glyphicon glyphicon-play"></span>
+          <i class="material-icons">play_arrow</i>
         </div>
       </div>
     </div>
   </div>
-  <div id="cq-timer-buttons" class="col offset-m4 m4">
+  <div id="cq-timer-buttons" class="col offset-m4 m4 s12">
     <%= form_tag topic_with_done_path(next_topic), method: :post do %>
       <%= hidden_field_tag "done_topic_id", topic.id %>
       <div class="center-align">
         <div id="cq-timer-done" class="row">
           <div id="cq-timer-done-like" class="col s4">
             <%= radio_button_tag "rating", "like", false %>
-            <label for="rating_like" class="green-text text-lighten-1"><span class="glyphicon glyphicon-thumbs-up"></span> Like</label>
+            <label for="rating_like" class="green-text text-lighten-1"><i class="material-icons">thumb_up</i></label>
           </div>
           <div id="cq-timer-done-dislike" class="col s4">
             <%= radio_button_tag "rating", "dislike", false %>
-            <label for="rating_dislike" class="red-text text-lighten-1"><span class="glyphicon glyphicon-thumbs-down"></span> Dislike</label>
+            <label for="rating_dislike" class="red-text text-lighten-1"><i class="material-icons">thumb_down</i></label>
           </div>
           <div class="col s4">
             <%= button_tag name: "done", type: "submit", id: "cq-timer-done-submit", class: "waves-effect waves-light btn light-green lighten-1" do %>
-              Done <span class="glyphicon glyphicon-ok"></span>
+              Done
             <% end %>
           </div>
         </div>
@@ -32,7 +32,7 @@
           <div class="col s12">
             <%= link_to "Topics list", topics_path, class: "waves-effect waves-light btn" %>
             <%= link_to topic_path(next_topic), class: "waves-effect waves-light btn" do %>
-              Skip <span class="glyphicon glyphicon-chevron-right"></span>
+              Skip
             <% end %>
           </div>
         </div>

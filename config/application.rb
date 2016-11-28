@@ -25,8 +25,5 @@ module ConvQ
 
     # bower
     config.assets.paths << Rails.root.join("vendor","assets","bower_components")
-
-    # bootstrap glyphicons
-    config.assets.paths << "#{Rails.root}/vendor/assets/fonts"
   end
 end

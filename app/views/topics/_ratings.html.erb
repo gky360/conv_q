@@ -2,10 +2,10 @@
 <% ratings = topic.ratings %>
 <div class="ratings">
   <% if verbose && ratings[:like] > 0 %>
-  <span class="green-text text-lighten-1 left"><span class="glyphicon glyphicon-thumbs-up"></span> <%= ratings[:like] %></span>
+  <span class="green-text text-lighten-1 left"><i class="material-icons">thumb_up</i> <%= ratings[:like] %></span>
   <% end %>
   <% if verbose && ratings[:dislike] > 0 %>
-  <span class="red-text text-lighten-1 right"><span class="glyphicon glyphicon-thumbs-down"></span> <%= ratings[:dislike] %></span>
+  <span class="red-text text-lighten-1 right"><i class="material-icons">thumb_down</i> <%= ratings[:dislike] %></span>
   <% end %>
   <div class="ratings progress">
     <div class="determinate light-green lighten-1" style="width: <%= ratings[:like] * 100.0 / (ratings[:total].zero? ? 1 : ratings[:total]) %>%">

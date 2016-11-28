@@ -25,7 +25,7 @@
 <div>
   <p>
     <%= link_to edit_user_registration_path, class: "waves-effect waves-light btn" do %>
-    <span class="glyphicon glyphicon-cog"></span> Settings
+    <i class="material-icons">settings</i> Settings
     <% end %>
   </p>
 </div>
@@ -36,7 +36,7 @@
     <%= link_to "Histories", user_histories_path(@user.account), class: "waves-effect waves-light btn light-green lighten-1" %>
     <%= link_to "Topics", user_topics_path(@user.account), class: "waves-effect waves-light btn light-green lighten-1" %>
     <%= link_to user_reports_path(@user.account), class: "waves-effect waves-light btn-flat grey-text text-darken-2" do %>
-      <span class="glyphicon glyphicon-flag"></span> Reports
+      <i class="material-icons">report_problem</i> Reports
     <% end %>
   </p>
 </div>

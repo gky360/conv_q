@@ -1,14 +1,17 @@
 module HistoriesHelper
 
   def rating_to_iocn(history)
-    class_str = ""
+    classes = ["material-icons"]
+    icon_text = ""
     case history.rating
     when "like"
-      class_str = "glyphicon glyphicon-thumbs-up text-success"
+      classes << "green-text text-lighten-1"
+      icon_text = "thumb_up"
     when "dislike"
-      class_str = "glyphicon glyphicon-thumbs-down text-danger"
+      classes << "red-text text-lighten-1"
+      icon_text = "thumb_down"
     end
-    return content_tag :span, "", class: class_str
+    return content_tag :i, icon_text, class: classes.join(" ")
   end
 
 end
