@@ -94,10 +94,6 @@
   padding-left: 0px;
   padding-right: 0px;
 }
-.ratings {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
 .reports_count {
   margin-left: 0.5em;
 }
@@ -161,8 +157,6 @@
 #cq-timer-done-like,
 #cq-timer-done-dislike,
 #cq-timer-done-submit {
-  margin-left: 10px;
-  margin-right: 10px;
 }
 
 
