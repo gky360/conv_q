@@ -4,6 +4,10 @@ var API_ROOT = '<%= Rails.env === "production" ? "https://conv-q.herokuapp.com" 
 
 var app = angular.module("app", ["ngResource"]);
 
+$(document).on('turbolinks:load', function() {
+  angular.bootstrap(document.body, ['app']);
+});
+
 // CSRFのトークンを設定するようにする
 app.config(["$httpProvider", function($httpProvider) {
   var authToken = $("meta[name=\"csrf-token\"]").attr("content");

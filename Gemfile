@@ -91,7 +91,7 @@ gem 'bower-rails'
 
 # others
 gem 'jquery-ui-rails'
-gem 'jquery-turbolinks'
+# gem 'jquery-turbolinks'
 
 # monaca スマホアプリ API
 gem 'angular_rails_csrf'

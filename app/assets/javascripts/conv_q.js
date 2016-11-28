@@ -1,6 +1,6 @@
 "use strict";
 
-$(function() {
+$(document).on('turbolinks:load', function() {
 
   var d_cq_timer = $("#cq-timer");
   if (d_cq_timer[0] != null) {
