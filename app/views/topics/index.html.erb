@@ -9,8 +9,8 @@
   </h1>
 </div>
 
-<% panel_title = "Search #{@user.name}'s Topics" if @user.present? %>
-<%= render partial: "topics/search", locals: { q: @q, panel_title: panel_title } %>
+<% card_title = "Search #{@user.name}'s Topics" if @user.present? %>
+<%= render partial: "topics/search", locals: { q: @q, card_title: card_title } %>
 
 <div>
   <p>

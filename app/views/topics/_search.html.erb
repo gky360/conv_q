@@ -1,27 +1,19 @@
-<% panel_title ||= "Search Topic" %>
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h4><%= panel_title %></h4>
-  </div>
-  <div class="panel-body">
-    <%= form_tag(request.path_info, method: :get, role: "form", class: "form-horizontal") do |f| %>
-      <div class="form-group">
-        <%= label_tag :title, "Title", class: "control-label col m-3" %>
-        <div class="col m-9">
-          <%= text_field_tag :title, q[:title], autofocus: true, class: "form-control" %>
-        </div>
+<% card_title ||= "Search Topic" %>
+<div class="card grey lighten-4">
+  <div class="card-content">
+    <span class="card-title"><%= card_title %></span>
+    <%= form_tag(request.path_info, method: :get, role: "form") do |f| %>
+      <div class="input-field">
+        <%= text_field_tag :title, q[:title], class: "validate", autofocus: true %>
+        <%= label_tag :title, "Title" %>
       </div>
-      <div class="form-group" ng-controller="tagsCtrl">
-        <%= label_tag :tag_names, "Tags", class: "control-label col m-3" %>
-        <div class="col m-9">
-          <%= text_field_tag :tag_names, q[:tag_names], class: "form-control", data: { role: "tagsinput" } %>
-        </div>
+      <div class="input-field" ng-controller="tagsCtrl">
+        <%= text_field_tag :tag_names, q[:tag_names], class: "validate", data: { role: "tagsinput" } %>
+        <%= label_tag :tag_names, "Tags" %>
       </div>
-      <div class="form-group">
-        <div class="col offset-m3 m9">
-          <%= submit_tag "Search", class: "btn btn-primary" %>
-          <%= link_to "Clear", request.path_info, class: "btn btn-default" %>
-        </div>
+      <div class="card-action">
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+        <%= link_to "Clear", request.path_info, class: "btn btn-default" %>
       </div>
     <% end %>
   </div>

@@ -1,0 +1,12 @@
+<% if resource.errors.any? %>
+  <div id="error_expl" class="card red lighten-1 white-text">
+    <div class="card-content">
+      <span class="card-title"><%= pluralize(resource.errors.count, "error") %>:</span>
+      <ul>
+      <% resource.errors.full_messages.each do |msg| %>
+        <li><p><%= msg %></p></li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>

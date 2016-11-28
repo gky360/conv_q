@@ -1,55 +1,32 @@
 <% target_path = @report.new_record? ? topic_reports_path(@report.topic) : report_path(@report) %>
-<%= form_for @report, :html => { :class => "form-horizontal report" }, url: target_path do |f| %>
+<%= form_for @report, :html => { :class => "report" }, url: target_path do |f| %>
 
-  <% if @report.errors.any? %>
-    <div id="error_expl" class="panel panel-danger">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@report.errors.count, "error") %> prohibited this report from being saved:</h3>
-      </div>
-      <div class="panel-body">
-        <ul>
-        <% @report.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-    </div>
-  <% end %>
+  <%= render "layouts/error_messages", resource: @report %>
 
-  <div class="form-group">
-    <%= f.label :topic_id, :class => 'control-label col s2 h4' %>
-    <div class="col s12">
-      <%= f.hidden_field :topic_id %>
-      <div class="form-control-static">
-        <%= render partial: "topics/topic_show", locals: { topic: @report.topic } %>
-      </div>
+  <div>
+    <%= f.hidden_field :topic_id %>
+    <%= f.label :topic_id %>
+    <div>
+      <%= render partial: "topics/topic_show", locals: { topic: @report.topic } %>
     </div>
   </div>
-  <div class="form-group">
-    <%= f.label :user_id, :class => 'control-label col s2' %>
-    <div class="col s10">
-      <p class="form-control-static"><%= user_to_link(current_user) %></p>
-    </div>
+  <div>
+    <%= f.label :user_id %>
+    <p><%= user_to_link(current_user) %></p>
   </div>
-  <div class="form-group">
-    <%= label_tag "reasons[]", "Reasons", :class => 'control-label col s2' %>
-    <div class="col s10">
-      <%= render partial: "reasons_checkboxes", locals: { report: @report } %>
-    </div>
+  <div>
+    <%= label_tag "reasons[]", "Reasons" %>
+    <%= render partial: "reasons_checkboxes", locals: { report: @report } %>
   </div>
-  <div class="form-group">
-    <%= f.label :detail, :class => 'control-label col s2' %>
-    <div class="col s10">
-      <%= f.text_area :detail, :class => 'form-control', maxlength: Report::DETAIL_MAX_LENGTH %>
-    </div>
+  <div class="input-field">
+    <%= f.text_area :detail, :class => 'materialize-textarea', maxlength: Report::DETAIL_MAX_LENGTH %>
+    <%= f.label :detail %>
   </div>
 
-  <div class="form-group">
-    <div class="col offset-s2 s10">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                reports_path, :class => 'btn btn-default' %>
-    </div>
+  <div class="card-action">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+              reports_path, :class => 'btn btn-default' %>
   </div>
 
 <% end %>
